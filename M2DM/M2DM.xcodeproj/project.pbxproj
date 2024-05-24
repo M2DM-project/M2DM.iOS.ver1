@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
+		CB679F232C00D09900724D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB679F222C00D09900724D0A /* Assets.xcassets */; };
+		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
+		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
+		CB679F402C00E13800724D0A /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CB679F3F2C00E13800724D0A /* KakaoSDKAuth */; };
+		CB679F422C00E13800724D0A /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CB679F412C00E13800724D0A /* KakaoSDKCommon */; };
+		CB679F442C00E13800724D0A /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CB679F432C00E13800724D0A /* KakaoSDKUser */; };
+		CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */; };
+		CB679F4E2C00EA8100724D0A /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4D2C00EA8100724D0A /* ShopView.swift */; };
+		CB679F502C00EA8900724D0A /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4F2C00EA8900724D0A /* CartView.swift */; };
+		CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */; };
+		CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F532C00EA9800724D0A /* MyPageView.swift */; };
+		CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F552C00EAA000724D0A /* SecondHandView.swift */; };
+		CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F572C00EAA800724D0A /* ShoppingView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
+		CB679F222C00D09900724D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
+		CB679F3C2C00DB6E00724D0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB679F452C00E16900724D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB679F4A2C00E53600724D0A /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		CB679F4D2C00EA8100724D0A /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		CB679F4F2C00EA8900724D0A /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPurchaseView.swift; sourceTree = "<group>"; };
+		CB679F532C00EA9800724D0A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		CB679F552C00EAA000724D0A /* SecondHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHandView.swift; sourceTree = "<group>"; };
+		CB679F572C00EAA800724D0A /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB679F182C00D09700724D0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB679F422C00E13800724D0A /* KakaoSDKCommon in Frameworks */,
+				CB679F402C00E13800724D0A /* KakaoSDKAuth in Frameworks */,
+				CB679F442C00E13800724D0A /* KakaoSDKUser in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB679F122C00D09700724D0A = {
+			isa = PBXGroup;
+			children = (
+				CB679F1D2C00D09700724D0A /* M2DM */,
+				CB679F1C2C00D09700724D0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB679F1C2C00D09700724D0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F1B2C00D09700724D0A /* M2DM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB679F1D2C00D09700724D0A /* M2DM */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F452C00E16900724D0A /* Info.plist */,
+				CB679F312C00D18300724D0A /* Common */,
+				CB679F302C00D17C00724D0A /* Resource */,
+				CB679F2F2C00D16000724D0A /* Presentation */,
+				CB679F2C2C00D0C000724D0A /* App */,
+			);
+			path = M2DM;
+			sourceTree = "<group>";
+		};
+		CB679F2C2C00D0C000724D0A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F1E2C00D09700724D0A /* M2DMApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CB679F2F2C00D16000724D0A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F382C00D21A00724D0A /* CommonUI */,
+				CB679F372C00D1FC00724D0A /* Authentication */,
+				CB679F362C00D1F200724D0A /* Cart */,
+				CB679F352C00D1E400724D0A /* GroupPurchase */,
+				CB679F342C00D1DD00724D0A /* MyPage */,
+				CB679F332C00D1CE00724D0A /* SecondHand */,
+				CB679F322C00D1A300724D0A /* Shopping */,
+				CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CB679F302C00D17C00724D0A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F4A2C00E53600724D0A /* Secrets.xcconfig */,
+				CB679F222C00D09900724D0A /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CB679F312C00D18300724D0A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F392C00D22900724D0A /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CB679F322C00D1A300724D0A /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F572C00EAA800724D0A /* ShoppingView.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		CB679F332C00D1CE00724D0A /* SecondHand */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F552C00EAA000724D0A /* SecondHandView.swift */,
+			);
+			path = SecondHand;
+			sourceTree = "<group>";
+		};
+		CB679F342C00D1DD00724D0A /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F532C00EA9800724D0A /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		CB679F352C00D1E400724D0A /* GroupPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */,
+			);
+			path = GroupPurchase;
+			sourceTree = "<group>";
+		};
+		CB679F362C00D1F200724D0A /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F4F2C00EA8900724D0A /* CartView.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		CB679F372C00D1FC00724D0A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F3C2C00DB6E00724D0A /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CB679F382C00D21A00724D0A /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F4D2C00EA8100724D0A /* ShopView.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		CB679F392C00D22900724D0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB679F1A2C00D09700724D0A /* M2DM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB679F292C00D09900724D0A /* Build configuration list for PBXNativeTarget "M2DM" */;
+			buildPhases = (
+				CB679F172C00D09700724D0A /* Sources */,
+				CB679F182C00D09700724D0A /* Frameworks */,
+				CB679F192C00D09700724D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = M2DM;
+			packageProductDependencies = (
+				CB679F3F2C00E13800724D0A /* KakaoSDKAuth */,
+				CB679F412C00E13800724D0A /* KakaoSDKCommon */,
+				CB679F432C00E13800724D0A /* KakaoSDKUser */,
+			);
+			productName = M2DM;
+			productReference = CB679F1B2C00D09700724D0A /* M2DM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB679F132C00D09700724D0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					CB679F1A2C00D09700724D0A = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = CB679F162C00D09700724D0A /* Build configuration list for PBXProject "M2DM" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB679F122C00D09700724D0A;
+			packageReferences = (
+				CB679F3E2C00E13800724D0A /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
+			productRefGroup = CB679F1C2C00D09700724D0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB679F1A2C00D09700724D0A /* M2DM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB679F192C00D09700724D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB679F232C00D09900724D0A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB679F172C00D09700724D0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */,
+				CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */,
+				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
+				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
+				CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */,
+				CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */,
+				CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */,
+				CB679F4E2C00EA8100724D0A /* ShopView.swift in Sources */,
+				CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */,
+				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CB679F272C00D09900724D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB679F282C00D09900724D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB679F2A2C00D09900724D0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB679F4A2C00E53600724D0A /* Secrets.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = L9J3VF6GK2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = M2DM/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwu.M2DM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CB679F2B2C00D09900724D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB679F4A2C00E53600724D0A /* Secrets.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = L9J3VF6GK2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = M2DM/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwu.M2DM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB679F162C00D09700724D0A /* Build configuration list for PBXProject "M2DM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB679F272C00D09900724D0A /* Debug */,
+				CB679F282C00D09900724D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB679F292C00D09900724D0A /* Build configuration list for PBXNativeTarget "M2DM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB679F2A2C00D09900724D0A /* Debug */,
+				CB679F2B2C00D09900724D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB679F3E2C00E13800724D0A /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.22.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB679F3F2C00E13800724D0A /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB679F3E2C00E13800724D0A /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		CB679F412C00E13800724D0A /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB679F3E2C00E13800724D0A /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		CB679F432C00E13800724D0A /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB679F3E2C00E13800724D0A /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CB679F132C00D09700724D0A /* Project object */;
+}
