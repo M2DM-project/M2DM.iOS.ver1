@@ -74,10 +74,10 @@
 			isa = PBXGroup;
 			children = (
 				CB679F452C00E16900724D0A /* Info.plist */,
+				CB679F2C2C00D0C000724D0A /* App */,
+				CB679F2F2C00D16000724D0A /* Presentation */,
 				CB679F312C00D18300724D0A /* Common */,
 				CB679F302C00D17C00724D0A /* Resource */,
-				CB679F2F2C00D16000724D0A /* Presentation */,
-				CB679F2C2C00D0C000724D0A /* App */,
 			);
 			path = M2DM;
 			sourceTree = "<group>";

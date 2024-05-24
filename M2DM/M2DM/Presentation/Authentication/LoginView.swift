@@ -6,10 +6,30 @@
 //
 
 import SwiftUI
+import KakaoSDKUser
 
 struct LoginView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.background
+            VStack {
+                Text("간편 로그인")
+                    .foregroundStyle(.textGray)
+                    .fontWeight(.bold)
+                    .font(.system(.title3))
+                    .padding(.bottom, 100)
+                
+                Button {
+                    
+                } label: {
+                    Image("kakaoLogin")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.7)
+                }
+            }
+        }
+        .ignoresSafeArea()
     }
 }
 

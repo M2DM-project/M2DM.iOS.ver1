@@ -18,7 +18,7 @@ struct M2DMApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            M2DMTabView()
+            LoginView()
                 .onOpenURL { url in
                     if (AuthApi.isKakaoTalkLoginUrl(url)) {
                         _ = AuthController.handleOpenUrl(url: url)
