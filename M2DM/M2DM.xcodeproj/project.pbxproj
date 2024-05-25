@@ -21,6 +21,12 @@
 		CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F532C00EA9800724D0A /* MyPageView.swift */; };
 		CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F552C00EAA000724D0A /* SecondHandView.swift */; };
 		CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F572C00EAA800724D0A /* ShoppingView.swift */; };
+		CB679F5D2C00F7E600724D0A /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F5C2C00F7E600724D0A /* KeyChain.swift */; };
+		CB679F5F2C00FA1100724D0A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F5E2C00FA1100724D0A /* AuthenticationViewModel.swift */; };
+		CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F692C00FB9500724D0A /* KakaoResponse.swift */; };
+		CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F6C2C00FC5800724D0A /* AuthenticationProtocol.swift */; };
+		CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F6E2C00FF1700724D0A /* Constant.swift */; };
+		CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E6F0E2C024651003433BD /* AuthenticationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		CB679F532C00EA9800724D0A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		CB679F552C00EAA000724D0A /* SecondHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHandView.swift; sourceTree = "<group>"; };
 		CB679F572C00EAA800724D0A /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
+		CB679F5C2C00F7E600724D0A /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		CB679F5E2C00FA1100724D0A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		CB679F692C00FB9500724D0A /* KakaoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoResponse.swift; sourceTree = "<group>"; };
+		CB679F6C2C00FC5800724D0A /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
+		CB679F6E2C00FF1700724D0A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CB7E6F0E2C024651003433BD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				CB679F452C00E16900724D0A /* Info.plist */,
+				CB679F2C2C00D0C000724D0A /* App */,
+				CB679F2F2C00D16000724D0A /* Presentation */,
 				CB679F312C00D18300724D0A /* Common */,
 				CB679F302C00D17C00724D0A /* Resource */,
-				CB679F2F2C00D16000724D0A /* Presentation */,
-				CB679F2C2C00D0C000724D0A /* App */,
 			);
 			path = M2DM;
 			sourceTree = "<group>";
@@ -117,6 +129,8 @@
 		CB679F312C00D18300724D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CB7E6F0D2C024643003433BD /* Error */,
+				CB679F592C00F46F00724D0A /* Util */,
 				CB679F392C00D22900724D0A /* Extension */,
 			);
 			path = Common;
@@ -165,7 +179,10 @@
 		CB679F372C00D1FC00724D0A /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				CB679F3C2C00DB6E00724D0A /* LoginView.swift */,
+				CB679F6B2C00FC4600724D0A /* DataManager */,
+				CB679F682C00FB7900724D0A /* Entity */,
+				CB679F642C00FB4100724D0A /* View */,
+				CB679F652C00FB5200724D0A /* ViewModel */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -184,6 +201,55 @@
 				CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CB679F592C00F46F00724D0A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F5C2C00F7E600724D0A /* KeyChain.swift */,
+				CB679F6E2C00FF1700724D0A /* Constant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CB679F642C00FB4100724D0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F3C2C00DB6E00724D0A /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB679F652C00FB5200724D0A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F5E2C00FA1100724D0A /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB679F682C00FB7900724D0A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F692C00FB9500724D0A /* KakaoResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CB679F6B2C00FC4600724D0A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F6C2C00FC5800724D0A /* AuthenticationProtocol.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CB7E6F0D2C024643003433BD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				CB7E6F0E2C024651003433BD /* AuthenticationError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB679F5F2C00FA1100724D0A /* AuthenticationViewModel.swift in Sources */,
+				CB679F5D2C00F7E600724D0A /* KeyChain.swift in Sources */,
+				CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */,
 				CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */,
 				CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */,
 				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
+				CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */,
 				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
 				CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */,
 				CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */,
@@ -273,6 +343,8 @@
 				CB679F4E2C00EA8100724D0A /* ShopView.swift in Sources */,
 				CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */,
 				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
+				CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */,
+				CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
