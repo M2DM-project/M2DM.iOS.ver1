@@ -27,6 +27,7 @@
 		CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F6C2C00FC5800724D0A /* AuthenticationProtocol.swift */; };
 		CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F6E2C00FF1700724D0A /* Constant.swift */; };
 		CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E6F0E2C024651003433BD /* AuthenticationError.swift */; };
+		CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E6F102C0250E6003433BD /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CB679F6C2C00FC5800724D0A /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
 		CB679F6E2C00FF1700724D0A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB7E6F0E2C024651003433BD /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		CB7E6F102C0250E6003433BD /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				CB679F4D2C00EA8100724D0A /* ShopView.swift */,
+				CB7E6F102C0250E6003433BD /* MenuView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */,
 				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
 				CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */,
+				CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */,
 				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
 				CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */,
 				CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */,

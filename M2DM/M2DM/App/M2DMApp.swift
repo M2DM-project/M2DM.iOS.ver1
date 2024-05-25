@@ -18,12 +18,15 @@ struct M2DMApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .onOpenURL { url in
-                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                        _ = AuthController.handleOpenUrl(url: url)
+            ZStack {
+                Color.background
+                LoginView()
+                    .onOpenURL { url in
+                        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                            _ = AuthController.handleOpenUrl(url: url)
+                        }
                     }
-                }
+            }
         }
     }
 }

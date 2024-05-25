@@ -9,8 +9,36 @@ import SwiftUI
 
 struct M2DMTabView: View {
     var body: some View {
-        Text("Login Success!")
-        Text("key: \(KeyChain.read(key: "access_token"))")
+        TabView() {
+            NavigationStack {
+                ShopView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("MAIN")
+                    }
+            }
+            NavigationStack {
+                MenuView()
+                    .tabItem {
+                        Image(systemName: "line.3.horizontal")
+                        Text("MENU")
+                    }
+            }
+            NavigationStack {
+                CartView()
+                    .tabItem {
+                        Image(systemName: "cart.fill")
+                        Text("CART")
+                    }
+            }
+            NavigationStack {
+                MyPageView()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("MYPAGE")
+                    }
+            }
+        }
     }
 }
 
