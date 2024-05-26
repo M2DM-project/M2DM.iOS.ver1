@@ -21,10 +21,6 @@ enum SortOptionEnum: CaseIterable {
     }
     
     var description: String {
-        switch self {
-        case .newest: "newest"
-        case .lowprice: "newest"
-        case .highprice: "newest"
-        }
+        String(describing: self)
     }
 }

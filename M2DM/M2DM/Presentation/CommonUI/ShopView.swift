@@ -63,7 +63,7 @@ struct ShopView: View {
             ScrollView {
                 LazyVGrid (columns: layout) {
                     ForEach(shoppingViewModel.productList) { item in
-                        Text("\(item.name)")
+                        ItemCellView(product: item)
                     }
                 }
             }

@@ -31,15 +31,6 @@ enum CategoryEnum: CaseIterable, Codable {
     }
     
     var description: String {
-        switch self {
-        case .GEN: "gen"
-        case .FUR: "fur"
-        case .FAB: "fab"
-        case .AD: "ad"
-        case .STO: "sto"
-        case .DEC: "dec"
-        case .LIT: "lit"
-        case .PLA: "pla"
-        }
+        String(describing: self)
     }
 }
