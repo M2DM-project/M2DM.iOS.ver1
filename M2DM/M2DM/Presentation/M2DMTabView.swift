@@ -8,36 +8,47 @@
 import SwiftUI
 
 struct M2DMTabView: View {
+    @StateObject private var coordinator = Coordinator.shared
     var body: some View {
-        TabView() {
+        TabView(selection: $coordinator.selectedTab) {
             NavigationStack {
-                ShopView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("MAIN")
-                    }
+                ShopListView()
             }
+            .tabItem {
+                Image(systemName: "house")
+                Text("MAIN")
+            }
+            .tag(TabViewType.shopping)
+            
             NavigationStack {
                 MenuView()
-                    .tabItem {
-                        Image(systemName: "line.3.horizontal")
-                        Text("MENU")
-                    }
+                    
             }
+            .tabItem {
+                Image(systemName: "line.3.horizontal")
+                Text("MENU")
+            }
+            .tag(TabViewType.menu)
+            
             NavigationStack {
                 CartView()
-                    .tabItem {
-                        Image(systemName: "cart.fill")
-                        Text("CART")
-                    }
+                    
             }
+            .tabItem {
+                Image(systemName: "cart.fill")
+                Text("CART")
+            }
+            .tag(TabViewType.cart)
+            
             NavigationStack {
                 MyPageView()
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("MYPAGE")
-                    }
+                   
             }
+            .tabItem {
+                Image(systemName: "person")
+                Text("MYPAGE")
+            }
+            .tag(TabViewType.mypage)
         }
     }
 }

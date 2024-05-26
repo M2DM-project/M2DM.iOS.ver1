@@ -1,5 +1,5 @@
 //
-//  ShopView.swift
+//  ShopListView.swift
 //  M2DM
 //
 //  Created by 최주리 on 5/25/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShopView: View {
+struct ShopListView: View {
     @EnvironmentObject private var shoppingViewModel: ShoppingViewModel
     
     //그리드 형식 2개
@@ -31,7 +31,6 @@ struct ShopView: View {
                                 .foregroundStyle(shoppingViewModel.selectedCategory == item ? .accent : .textGray)
                         }
                         .onTapGesture {
-                            // 카테고리 필터링 api
                             Task {
                                 await shoppingViewModel.loadSortedProductList(category: item, sortOption: shoppingViewModel.selectedSortOption)
                             }
@@ -45,7 +44,6 @@ struct ShopView: View {
                 Menu {
                     ForEach(SortOptionEnum.allCases, id: \.self) { option in
                         Button(action: {
-                            // 정렬 api
                             Task {
                                 await shoppingViewModel.loadSortedProductList(category: shoppingViewModel.selectedCategory, sortOption: option)
                             }
@@ -74,8 +72,4 @@ struct ShopView: View {
             }
         }
     }
-}
-
-#Preview {
-    ShopView()
 }
