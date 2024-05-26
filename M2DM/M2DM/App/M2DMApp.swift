@@ -11,11 +11,14 @@ import KakaoSDKAuth
 
 @main
 struct M2DMApp: App {
+    @StateObject private var shoppingViewModel = ShoppingViewModel()
+    
     init() {
         //kakao sdk 초기화
         guard let kakaoAppKey = Bundle.main.kakaoAppKey else {return}
         KakaoSDK.initSDK(appKey: kakaoAppKey)
     }
+    
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -28,5 +31,6 @@ struct M2DMApp: App {
                     }
             }
         }
+        .environmentObject(shoppingViewModel)
     }
 }
