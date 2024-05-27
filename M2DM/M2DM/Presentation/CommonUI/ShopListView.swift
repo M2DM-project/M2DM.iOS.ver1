@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShopListView: View {
     @EnvironmentObject private var shoppingViewModel: ShoppingViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     
     //그리드 형식 2개
     let layout = [
@@ -64,6 +65,18 @@ struct ShopListView: View {
                         ItemCellView(product: item)
                     }
                 }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    coordinator.appendPath(.searchView)
+                }, label: {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                })
             }
         }
         .onAppear {

@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct M2DMTabView: View {
-    @StateObject private var coordinator = Coordinator.shared
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
-            NavigationStack {
+            NavigationStack(path: $coordinator.shoppingPath) {
                 ShopListView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
             }
             .tabItem {
                 Image(systemName: "house")
@@ -20,9 +24,11 @@ struct M2DMTabView: View {
             }
             .tag(TabViewType.shopping)
             
-            NavigationStack {
+            NavigationStack(path: $coordinator.menuPath) {
                 MenuView()
-                    
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
             }
             .tabItem {
                 Image(systemName: "line.3.horizontal")
@@ -30,9 +36,11 @@ struct M2DMTabView: View {
             }
             .tag(TabViewType.menu)
             
-            NavigationStack {
+            NavigationStack(path: $coordinator.cartPath) {
                 CartView()
-                    
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
             }
             .tabItem {
                 Image(systemName: "cart.fill")
@@ -40,9 +48,11 @@ struct M2DMTabView: View {
             }
             .tag(TabViewType.cart)
             
-            NavigationStack {
+            NavigationStack(path: $coordinator.mypagePath) {
                 MyPageView()
-                   
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
             }
             .tabItem {
                 Image(systemName: "person")

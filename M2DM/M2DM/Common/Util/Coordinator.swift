@@ -13,7 +13,7 @@ enum TabViewType {
 
 enum Page {
     case shopListView
-    //case productDetailView
+    case searchView
 }
 
 final class Coordinator: ObservableObject {
@@ -33,8 +33,34 @@ final class Coordinator: ObservableObject {
         switch page {
         case .shopListView:
             ShopListView()
-        //case .productDetailView:
-            
+        case .searchView:
+            SearchView()
+        }
+    }
+    
+    func appendPath(_ page: Page) {
+        switch selectedTab {
+        case .shopping:
+            shoppingPath.append(page)
+        case .menu:
+            menuPath.append(page)
+        case .cart:
+            cartPath.append(page)
+        case .mypage:
+            mypagePath.append(page)
+        }
+    }
+    
+    func pop(_ depth: Int = 1) {
+        switch selectedTab {
+        case .shopping:
+            shoppingPath.removeLast(depth)
+        case .menu:
+            menuPath.removeLast(depth)
+        case .cart:
+            cartPath.removeLast(depth)
+        case .mypage:
+            mypagePath.removeLast(depth)
         }
     }
 }

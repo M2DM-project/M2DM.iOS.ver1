@@ -12,6 +12,7 @@ import KakaoSDKAuth
 @main
 struct M2DMApp: App {
     @StateObject private var shoppingViewModel = ShoppingViewModel()
+    @StateObject private var coordinator = Coordinator.shared
     
     init() {
         //kakao sdk 초기화
@@ -32,5 +33,6 @@ struct M2DMApp: App {
             }
         }
         .environmentObject(shoppingViewModel)
+        .environmentObject(coordinator)
     }
 }
