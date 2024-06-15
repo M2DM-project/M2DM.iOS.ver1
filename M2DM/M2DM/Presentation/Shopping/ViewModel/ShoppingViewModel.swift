@@ -43,4 +43,13 @@ final class ShoppingViewModel: ObservableObject {
         print("\(productList.count)")
         #endif
     }
+    
+    @MainActor
+    func loadSearchProductList(searchText: String) async {
+        productList = await dataManager.loadSearchProduct(searchText: searchText).content
+        
+        #if DEBUG
+        print("\(productList.count)")
+        #endif
+    }
 }

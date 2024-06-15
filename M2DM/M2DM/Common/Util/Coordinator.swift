@@ -14,12 +14,17 @@ enum TabViewType {
 enum Page {
     case shopListView
     case searchView
+    case searchResultView
 }
 
 final class Coordinator: ObservableObject {
     static let shared = Coordinator()
     
     var selectedTab: TabViewType = .shopping
+    // TODO: 탭이 바뀌었을 때 초기화 하는 부분 필요
+    var fromTab: Page = .shopListView
+    
+    var searchText: String = ""
     
     //MARK: - NavigationPath
     
@@ -35,6 +40,8 @@ final class Coordinator: ObservableObject {
             ShopListView()
         case .searchView:
             SearchView()
+        case .searchResultView:
+            SearchResultView()
         }
     }
     
