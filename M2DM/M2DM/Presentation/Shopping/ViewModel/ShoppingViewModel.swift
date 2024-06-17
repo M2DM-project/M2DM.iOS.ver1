@@ -12,6 +12,7 @@ final class ShoppingViewModel: ObservableObject {
     @Published private(set) var selectedCategory: CategoryEnum = .GEN
     
     @Published private(set) var productList: [Product] = []
+    @Published private(set) var product: DetailProduct = DetailProduct(id: 0, cateCode: "error", name: "error", price: 0, content: "error", imgUrl: "error", favState: "error", reviewList: [], reviewCnt: 0, reviewStarAvg: 0)
     
     var dataManager: ShoppingProtocol
     
@@ -50,6 +51,15 @@ final class ShoppingViewModel: ObservableObject {
         
         #if DEBUG
         print("\(productList.count)")
+        #endif
+    }
+    
+    @MainActor
+    func loadOneProduct(id: Int) async {
+        product = await dataManager.loadOneProduct(id: id).content
+        
+        #if DEBUG
+        print("\(product.name)")
         #endif
     }
 }

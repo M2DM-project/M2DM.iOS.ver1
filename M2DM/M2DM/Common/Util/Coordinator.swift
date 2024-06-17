@@ -15,6 +15,7 @@ enum Page {
     case shopListView
     case searchView
     case searchResultView
+    case shopDetailView
 }
 
 final class Coordinator: ObservableObject {
@@ -42,6 +43,8 @@ final class Coordinator: ObservableObject {
             SearchView()
         case .searchResultView:
             SearchResultView()
+        case .shopDetailView:
+            ShopDetailView()
         }
     }
     

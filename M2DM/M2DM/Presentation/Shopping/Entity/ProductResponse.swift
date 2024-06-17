@@ -12,3 +12,9 @@ struct ProductListResponse: Decodable {
     let message: String
     let content: [Product]
 }
+
+struct OneProductResponse: Decodable {
+    let statusCode: Int
+    let message: String
+    let content: DetailProduct
+}

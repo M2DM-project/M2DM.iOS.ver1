@@ -12,6 +12,7 @@ protocol ShoppingProtocol {
     func loadAllProduct() async -> ProductListResponse
     func loadProductBySort(category: String, sortOption: String) async -> ProductListResponse
     func loadSearchProduct(searchText: String) async -> ProductListResponse
+    func loadOneProduct(id: Int) async -> OneProductResponse
 }
 
 final class Shopping {
@@ -106,6 +107,33 @@ extension Shopping: ShoppingProtocol {
             print("실패")
             #endif
             return ProductListResponse(statusCode: 400, message: "client error", content: [])
+        }
+    }
+    
+    func loadOneProduct(id: Int) async -> OneProductResponse {
+        let url = "\(Constant.BASE_URL)/product/\(id)"
+        
+        #if DEBUG
+        print("\(url)")
+        #endif
+        let request = AF.request(url,
+                                 method: .get,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default)
+        let dataTask = request.serializingDecodable(OneProductResponse.self)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            guard let _ = await dataTask.response.response else {return OneProductResponse(statusCode: 400, message: "error", content: DetailProduct(id: 0, cateCode: "error", name: "error", price: 0, content: "error", imgUrl: "error", favState: "error", reviewList: [], reviewCnt: 0, reviewStarAvg: 0))}
+            return value
+            
+        case .failure(_):
+            // TODO: 에러 처리
+            #if DEBUG
+            print("실패")
+            #endif
+            return OneProductResponse(statusCode: 400, message: "error", content: DetailProduct(id: 0, cateCode: "error", name: "error", price: 0, content: "error", imgUrl: "error", favState: "error", reviewList: [], reviewCnt: 0, reviewStarAvg: 0))
         }
     }
 }

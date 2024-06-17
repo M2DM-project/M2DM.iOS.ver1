@@ -63,6 +63,12 @@ struct ShopListView: View {
                 LazyVGrid (columns: layout) {
                     ForEach(shoppingViewModel.productList) { item in
                         ItemCellView(product: item)
+                            .onTapGesture {
+                                Task {
+                                    await shoppingViewModel.loadOneProduct(id: item.id)
+                                    coordinator.appendPath(.shopDetailView)
+                                }
+                            }
                     }
                 }
             }
