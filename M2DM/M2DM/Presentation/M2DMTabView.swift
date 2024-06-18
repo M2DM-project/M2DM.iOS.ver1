@@ -8,36 +8,57 @@
 import SwiftUI
 
 struct M2DMTabView: View {
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var body: some View {
-        TabView() {
-            NavigationStack {
-                ShopView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("MAIN")
+        TabView(selection: $coordinator.selectedTab) {
+            NavigationStack(path: $coordinator.shoppingPath) {
+                ShopListView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
                     }
             }
-            NavigationStack {
+            .tabItem {
+                Image(systemName: "house")
+                Text("MAIN")
+            }
+            .tag(TabViewType.shopping)
+            
+            NavigationStack(path: $coordinator.menuPath) {
                 MenuView()
-                    .tabItem {
-                        Image(systemName: "line.3.horizontal")
-                        Text("MENU")
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
                     }
             }
-            NavigationStack {
+            .tabItem {
+                Image(systemName: "line.3.horizontal")
+                Text("MENU")
+            }
+            .tag(TabViewType.menu)
+            
+            NavigationStack(path: $coordinator.cartPath) {
                 CartView()
-                    .tabItem {
-                        Image(systemName: "cart.fill")
-                        Text("CART")
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
                     }
             }
-            NavigationStack {
+            .tabItem {
+                Image(systemName: "cart.fill")
+                Text("CART")
+            }
+            .tag(TabViewType.cart)
+            
+            NavigationStack(path: $coordinator.mypagePath) {
                 MyPageView()
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("MYPAGE")
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
                     }
             }
+            .tabItem {
+                Image(systemName: "person")
+                Text("MYPAGE")
+            }
+            .tag(TabViewType.mypage)
         }
     }
 }

@@ -16,7 +16,6 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var authToken: String = ""
     @Published var result : KakaoResponse = KakaoResponse(access_token: "", refresh_token: "")
     
-    private var cancellableSet: Set<AnyCancellable> = []
     var dataManager: AuthenticationProtocol
     
     init() {
