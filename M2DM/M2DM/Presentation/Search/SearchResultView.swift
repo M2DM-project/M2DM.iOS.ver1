@@ -29,6 +29,7 @@ struct SearchResultView: View {
                 }
             }
         }
+        .toolbarRole(.editor)
         .navigationTitle(coordinator.searchText)
         .onAppear {
             Task {

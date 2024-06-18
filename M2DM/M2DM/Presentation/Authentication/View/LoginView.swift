@@ -15,26 +15,23 @@ struct LoginView: View {
         if KeyChain.read(key: "access_token") != nil {
             M2DMTabView()
         } else {
-            ZStack {
-                Color.background
-                VStack {
-                    Text("간편 로그인")
-                        .foregroundStyle(.textGray)
-                        .fontWeight(.bold)
-                        .font(.system(.title3))
-                        .padding(.bottom, 100)
-                    
-                    Button {
-                        authenticationViewModel.getKakaoToken()
-                    } label: {
-                        Image("kakaoLogin")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.main.bounds.width * 0.7)
-                    }
+            VStack {
+                Text("간편 로그인")
+                    .foregroundStyle(.textGray)
+                    .fontWeight(.bold)
+                    .font(.system(.title3))
+                    .padding(.bottom, 100)
+                
+                Button {
+                    authenticationViewModel.getKakaoToken()
+                } label: {
+                    Image("kakaoLogin")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.7)
                 }
             }
-            .ignoresSafeArea()
+            
         }
     }
 }

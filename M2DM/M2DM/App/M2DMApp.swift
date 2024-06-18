@@ -16,9 +16,10 @@ struct M2DMApp: App {
     
     init() {
         //kakao sdk 초기화
-        guard let kakaoAppKey = Bundle.main.kakaoAppKey else {return}
-        KakaoSDK.initSDK(appKey: kakaoAppKey)
+        guard let kakaoAppKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") else {return}
+        KakaoSDK.initSDK(appKey: kakaoAppKey as! String)
     }
+    
     
     var body: some Scene {
         WindowGroup {
@@ -31,6 +32,7 @@ struct M2DMApp: App {
                         }
                     }
             }
+            .ignoresSafeArea()
         }
         .environmentObject(shoppingViewModel)
         .environmentObject(coordinator)

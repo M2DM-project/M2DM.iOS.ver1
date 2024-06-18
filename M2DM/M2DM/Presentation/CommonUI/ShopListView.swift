@@ -73,6 +73,7 @@ struct ShopListView: View {
                 }
             }
         }
+        .toolbarRole(.editor)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
@@ -85,6 +86,7 @@ struct ShopListView: View {
                 })
             }
         }
+        // TODO: onappear 할 때마다 불러오는 로직이 아니라 처음만 불러오고 refresh하면 불러오는 걸로 고치기
         .onAppear {
             Task {
                 await shoppingViewModel.loadAllProduct()

@@ -15,6 +15,7 @@ struct SearchView: View {
         VStack {
             
         }
+        .toolbarRole(.editor)
         .searchable(text: $searchText)
         .onSubmit(of: .search) {
             if !searchText.isEmpty {
