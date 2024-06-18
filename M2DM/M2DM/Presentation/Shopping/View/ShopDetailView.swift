@@ -29,7 +29,7 @@ struct ShopDetailView: View {
                     ZStack {
                         Rectangle()
                             .foregroundStyle(.white)
-                        Image("\(shoppingViewModel.product.imgUrl)")
+                        Image("shopImage\(shoppingViewModel.product.id)")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
