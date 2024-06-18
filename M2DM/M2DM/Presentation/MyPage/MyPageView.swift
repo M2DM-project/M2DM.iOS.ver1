@@ -36,6 +36,11 @@ struct MyPageView: View {
                             // TODO: 로그아웃 얼럿 띄우기
                             authenticationViewModel.logout()
                         }
+                    Text("회원탈퇴")
+                        .onTapGesture {
+                            // TODO: 회원탈퇴 얼럿 띄우기
+                            authenticationViewModel.withdrawal()
+                        }
                 }
                 .foregroundStyle(.textGray)
                 .font(.system(size: 20))

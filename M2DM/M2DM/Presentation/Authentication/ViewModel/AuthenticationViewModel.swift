@@ -119,8 +119,15 @@ final class AuthenticationViewModel: ObservableObject {
     
     //MARK: - 회원 탈퇴
     
+    @MainActor
     func withdrawal() {
-        
+        Task {
+            await dataManager.withdrawal()
+            KeyChain.delete(key: "access_token")
+            KeyChain.delete(key: "refresh_token")
+            isLoggined = false
+            print("탈퇴 성공 !!")
+        }
     }
 }
 
