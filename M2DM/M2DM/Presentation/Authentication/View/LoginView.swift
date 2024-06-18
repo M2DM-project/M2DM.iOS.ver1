@@ -9,10 +9,11 @@ import SwiftUI
 import KakaoSDKUser
 
 struct LoginView: View {
-    @StateObject private var authenticationViewModel = AuthenticationViewModel()
+    @EnvironmentObject private var authenticationViewModel: AuthenticationViewModel
+    @State private var isLoggined: Bool = false
     
     var body: some View {
-        if KeyChain.read(key: "access_token") != nil {
+        if authenticationViewModel.isLoggined {
             M2DMTabView()
         } else {
             VStack {
@@ -25,13 +26,12 @@ struct LoginView: View {
                 Button {
                     authenticationViewModel.getKakaoToken()
                 } label: {
-                    Image("kakaoLogin")
+                    Image(.kakaoLogin)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width * 0.7)
                 }
             }
-            
         }
     }
 }

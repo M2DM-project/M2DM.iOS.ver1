@@ -13,7 +13,7 @@ struct ItemCellView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Image("\(product.imgUrl)")
+            Image("shopImage\(product.id)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 //.frame(width: 150, height: 150)

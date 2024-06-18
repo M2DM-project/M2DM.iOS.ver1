@@ -15,10 +15,16 @@ final class AuthenticationViewModel: ObservableObject {
     
     @Published var authToken: String = ""
     @Published var result : KakaoResponse = KakaoResponse(access_token: "", refresh_token: "")
+    @Published private(set) var isLoggined: Bool
     
     var dataManager: AuthenticationProtocol
     
     init() {
+        if KeyChain.read(key: "access_token") != nil {
+            isLoggined = true
+        } else {
+            isLoggined = false
+        }
         self.dataManager = Authentication.shared
     }
     
@@ -99,6 +105,29 @@ final class AuthenticationViewModel: ObservableObject {
     func setToken() {
         KeyChain.create(key: "access_token", token: result.access_token)
         KeyChain.create(key: "refresh_token", token: result.refresh_token)
+        isLoggined = true
+    }
+    
+    //MARK: - 로그아웃
+     
+    @MainActor
+    func logout() {
+        KeyChain.delete(key: "access_token")
+        KeyChain.delete(key: "refresh_token")
+        isLoggined = false
+    }
+    
+    //MARK: - 회원 탈퇴
+    
+    @MainActor
+    func withdrawal() {
+        Task {
+            await dataManager.withdrawal()
+            KeyChain.delete(key: "access_token")
+            KeyChain.delete(key: "refresh_token")
+            isLoggined = false
+            print("탈퇴 성공 !!")
+        }
     }
 }
 
