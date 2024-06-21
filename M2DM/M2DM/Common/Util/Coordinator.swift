@@ -22,7 +22,6 @@ final class Coordinator: ObservableObject {
     static let shared = Coordinator()
     
     var selectedTab: TabViewType = .shopping
-    // TODO: 탭이 바뀌었을 때 초기화 하는 부분 필요
     var fromTab: Page = .shopListView
     
     var searchText: String = ""

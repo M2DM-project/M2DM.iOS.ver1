@@ -23,7 +23,6 @@ struct ShopDetailView: View {
                         .frame(height: 70)
                         .foregroundStyle(.clear)
                     HStack {
-                        //                        Image(systemName: "chevron.right")
                         Text("\(shoppingViewModel.product.cateCode)")
                         Spacer()
                     }
@@ -104,6 +103,8 @@ struct ShopDetailView: View {
                                 Spacer()
                             }
                             
+                            // TODO: 구매한 상품만 리뷰 작성 가능하도록 해야 함!
+                            
                             VStack {
                                 HStack {
                                     StarRatingView(rating: $reviewRating, fontSize: 12, isWriting: true)
@@ -115,7 +116,13 @@ struct ShopDetailView: View {
                                 .padding(.bottom, 5)
                                 HStack {
                                     Spacer()
-                                    RoundRectangleButton(cornerRadius: 5, height: 24, fontSize: 13, title: "작성완료")
+                                    RoundRectangleButton(cornerRadius: 5, height: 24, fontSize: 13, title: "작성완료") {
+                                        Task {
+                                            await reviewViewModel.addReview(id: shoppingViewModel.product.id, star: reviewRating, content: reviewText)
+                                            await shoppingViewModel.loadOneProduct(id: shoppingViewModel.product.id)
+                                            reviewViewModel.loadAllReviewList()
+                                        }
+                                    }
                                         .frame(width: 80)
                                 }
                             }
@@ -144,7 +151,7 @@ struct ShopDetailView: View {
                                 Divider()
                                     .background(.textGray)
                                 
-                                ForEach(shoppingViewModel.product.reviewList) { item in
+                                ForEach(reviewViewModel.reviewList) { item in
                                     VStack {
                                         ReviewCell(rating: item.star, reviewText: item.content, date: item.date)
                                         Divider()
@@ -164,6 +171,12 @@ struct ShopDetailView: View {
             .toolbarRole(.editor)
         }
         .ignoresSafeArea()
+        .onAppear {
+            Task {
+                reviewViewModel.getProduct(product: shoppingViewModel.product)
+                reviewViewModel.loadAllReviewList()
+            }
+        }
     }
 }
 
