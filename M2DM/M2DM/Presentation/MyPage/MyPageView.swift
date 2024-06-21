@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyPageView: View {
-//    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: Coordinator
     @EnvironmentObject private var authenticationViewModel: AuthenticationViewModel
     
     var body: some View {
@@ -35,11 +35,13 @@ struct MyPageView: View {
                         .onTapGesture {
                             // TODO: 로그아웃 얼럿 띄우기
                             authenticationViewModel.logout()
+                            coordinator.selectedTab = .shopping
                         }
                     Text("회원탈퇴")
                         .onTapGesture {
                             // TODO: 회원탈퇴 얼럿 띄우기
                             authenticationViewModel.withdrawal()
+                            coordinator.selectedTab = .shopping
                         }
                 }
                 .foregroundStyle(.textGray)

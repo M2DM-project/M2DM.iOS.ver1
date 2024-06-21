@@ -11,6 +11,7 @@ struct RoundRectangleButton: View {
     var cornerRadius: CGFloat
     var height: CGFloat
     var foreGroundColor: Color
+    var fontsize: CGFloat
     
     var title: String
     var isDisabled: Bool
@@ -21,6 +22,7 @@ struct RoundRectangleButton: View {
         cornerRadius: CGFloat = 10,
         height: CGFloat = 45,
         foreGroundColor: Color = .accent,
+        fontSize: CGFloat = 18,
         title: String = "버튼 타이틀",
         isDisabled: Bool = false,
         buttonAction: @escaping () -> Void = { }
@@ -28,6 +30,7 @@ struct RoundRectangleButton: View {
         self.cornerRadius = cornerRadius
         self.height = height
         self.foreGroundColor = foreGroundColor
+        self.fontsize = fontSize
         self.title = title
         self.isDisabled = isDisabled
         self.buttonAction = buttonAction
@@ -41,7 +44,7 @@ struct RoundRectangleButton: View {
                 .foregroundStyle(!isDisabled ? .accent : .textLightGray)
                 .overlay {
                     Text(title)
-                        .font(.system(size: 18))
+                        .font(.system(size: fontsize))
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
                 }
