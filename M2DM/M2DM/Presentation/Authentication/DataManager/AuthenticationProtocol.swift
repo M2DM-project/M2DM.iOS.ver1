@@ -44,7 +44,7 @@ extension Authentication: AuthenticationProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("카카오 토큰 받아오기 실패")
             #endif
             return KakaoResponse(access_token: "error", refresh_token: "error")
         }
@@ -72,7 +72,7 @@ extension Authentication: AuthenticationProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("회원탈퇴 실패")
             #endif
         }
     }

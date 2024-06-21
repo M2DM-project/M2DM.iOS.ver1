@@ -44,7 +44,7 @@ extension Shopping: ShoppingProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("전체 상품 불러오기 실패")
             #endif
             return ProductListResponse(statusCode: 400, message: "client error", content: [])
         }
@@ -77,7 +77,7 @@ extension Shopping: ShoppingProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("상품 정렬 실패")
             #endif
             return ProductListResponse(statusCode: 400, message: "client error", content: [])
         }
@@ -104,7 +104,7 @@ extension Shopping: ShoppingProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("상품 검색 실패")
             #endif
             return ProductListResponse(statusCode: 400, message: "client error", content: [])
         }
@@ -131,7 +131,7 @@ extension Shopping: ShoppingProtocol {
         case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
-            print("실패")
+            print("상품 하나 불러오기 실패")
             #endif
             return OneProductResponse(statusCode: 400, message: "error", content: DetailProduct(id: 0, cateCode: "error", name: "error", price: 0, content: "error", imgUrl: "error", favState: "error", reviewList: [], reviewCnt: 0, reviewStarAvg: 0))
         }

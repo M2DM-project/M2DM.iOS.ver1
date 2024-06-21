@@ -43,6 +43,14 @@
 		CBC6B0E72C208B4B00D36671 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6B0E62C208B4B00D36671 /* DetailProduct.swift */; };
 		CBC6B0E92C208B7700D36671 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6B0E82C208B7700D36671 /* Review.swift */; };
 		CBC6B0ED2C214EEC00D36671 /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6B0EC2C214EEC00D36671 /* RoundRectangleButton.swift */; };
+		CBF0CC472C22C10500970EC9 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC462C22C10500970EC9 /* ReviewCell.swift */; };
+		CBF0CC4B2C22E5B800970EC9 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC4A2C22E5B800970EC9 /* ReviewViewModel.swift */; };
+		CBF0CC4E2C22E5D700970EC9 /* ReviewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC4D2C22E5D700970EC9 /* ReviewProtocol.swift */; };
+		CBF0CC502C25539400970EC9 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC4F2C25539400970EC9 /* StarRatingView.swift */; };
+		CBF0CC522C255F1400970EC9 /* ReviewSortOptionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC512C255F1400970EC9 /* ReviewSortOptionsEnum.swift */; };
+		CBF0CC562C25659C00970EC9 /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */; };
+		CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC572C25660400970EC9 /* ReviewResponse.swift */; };
+		CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +90,14 @@
 		CBC6B0E62C208B4B00D36671 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		CBC6B0E82C208B7700D36671 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CBC6B0EC2C214EEC00D36671 /* RoundRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
+		CBF0CC462C22C10500970EC9 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		CBF0CC4A2C22E5B800970EC9 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		CBF0CC4D2C22E5D700970EC9 /* ReviewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProtocol.swift; sourceTree = "<group>"; };
+		CBF0CC4F2C25539400970EC9 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		CBF0CC512C255F1400970EC9 /* ReviewSortOptionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSortOptionsEnum.swift; sourceTree = "<group>"; };
+		CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
+		CBF0CC572C25660400970EC9 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
+		CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */,
-				CBC6B0DD2C1DCBE500D36671 /* Search */,
+				CBF0CC432C22BED200970EC9 /* Review */,
 				CB679F382C00D21A00724D0A /* CommonUI */,
+				CBC6B0DD2C1DCBE500D36671 /* Search */,
 				CB679F372C00D1FC00724D0A /* Authentication */,
 				CB679F362C00D1F200724D0A /* Cart */,
 				CB679F352C00D1E400724D0A /* GroupPurchase */,
@@ -250,6 +267,7 @@
 				CB679F5C2C00F7E600724D0A /* KeyChain.swift */,
 				CB679F6E2C00FF1700724D0A /* Constant.swift */,
 				CB7E6F2A2C038798003433BD /* Coordinator.swift */,
+				CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -299,6 +317,7 @@
 			children = (
 				CB7E6F132C025FF9003433BD /* CategoryEnum.swift */,
 				CB7E6F1B2C036B0F003433BD /* SortOptionEnum.swift */,
+				CBF0CC512C255F1400970EC9 /* ReviewSortOptionsEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -354,6 +373,51 @@
 				CBC6B0DE2C1DCBF900D36671 /* SearchResultView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		CBF0CC432C22BED200970EC9 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0CC542C25658800970EC9 /* Entity */,
+				CBF0CC4C2C22E5CB00970EC9 /* DataManager */,
+				CBF0CC452C22BEF400970EC9 /* View */,
+				CBF0CC442C22BEDB00970EC9 /* ViewModel */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		CBF0CC442C22BEDB00970EC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0CC4A2C22E5B800970EC9 /* ReviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBF0CC452C22BEF400970EC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0CC462C22C10500970EC9 /* ReviewCell.swift */,
+				CBF0CC4F2C25539400970EC9 /* StarRatingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBF0CC4C2C22E5CB00970EC9 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0CC4D2C22E5D700970EC9 /* ReviewProtocol.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CBF0CC542C25658800970EC9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */,
+				CBF0CC572C25660400970EC9 /* ReviewResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,26 +507,34 @@
 				CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */,
 				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
 				CB7E6F1E2C036FCC003433BD /* ProductResponse.swift in Sources */,
+				CBF0CC522C255F1400970EC9 /* ReviewSortOptionsEnum.swift in Sources */,
+				CBF0CC472C22C10500970EC9 /* ReviewCell.swift in Sources */,
 				CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */,
 				CB7E6F142C025FF9003433BD /* CategoryEnum.swift in Sources */,
 				CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */,
 				CBC6B0ED2C214EEC00D36671 /* RoundRectangleButton.swift in Sources */,
 				CB7E6F1A2C036AB8003433BD /* ShoppingViewModel.swift in Sources */,
 				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
+				CBF0CC502C25539400970EC9 /* StarRatingView.swift in Sources */,
 				CB7E6F232C037193003433BD /* Product.swift in Sources */,
 				CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */,
 				CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */,
 				CB7E6F292C0382CF003433BD /* ItemCellView.swift in Sources */,
 				CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */,
+				CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */,
+				CBF0CC4B2C22E5B800970EC9 /* ReviewViewModel.swift in Sources */,
 				CB7E6F2F2C03A74A003433BD /* SearchView.swift in Sources */,
 				CB679F4E2C00EA8100724D0A /* ShopListView.swift in Sources */,
+				CBF0CC4E2C22E5D700970EC9 /* ReviewProtocol.swift in Sources */,
 				CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */,
 				CB7E6F1C2C036B0F003433BD /* SortOptionEnum.swift in Sources */,
 				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
 				CBC6B0E92C208B7700D36671 /* Review.swift in Sources */,
 				CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */,
+				CBF0CC562C25659C00970EC9 /* ReviewRequest.swift in Sources */,
 				CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */,
 				CBC6B0E52C20864300D36671 /* ShopDetailView.swift in Sources */,
+				CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */,
 				CBC6B0E72C208B4B00D36671 /* DetailProduct.swift in Sources */,
 				CB7E6F212C0370AF003433BD /* Category.swift in Sources */,
 			);
