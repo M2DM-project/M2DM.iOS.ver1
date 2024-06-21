@@ -55,7 +55,7 @@ extension Shopping: ShoppingProtocol {
         
         if sortOption == "" {
             url = "\(Constant.BASE_URL)/product/sort/category?cateCode=\(category)"
-        } else if category == "" {
+        } else if category == "GEN" {
             url = "\(Constant.BASE_URL)/product/sort/category?sortBy=\(sortOption)"
         }
         
