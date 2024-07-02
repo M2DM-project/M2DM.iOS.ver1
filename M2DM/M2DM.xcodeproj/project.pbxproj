@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CB031B592C21553A00ED46C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB031B582C21553A00ED46C2 /* Assets.xcassets */; };
+		CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA57D2C33EBD00056407F /* CartViewModel.swift */; };
+		CB1FA5812C33EC070056407F /* CartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5802C33EC070056407F /* CartProtocol.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -51,10 +53,13 @@
 		CBF0CC562C25659C00970EC9 /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */; };
 		CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC572C25660400970EC9 /* ReviewResponse.swift */; };
 		CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */; };
+		CBF3159D2C32AB08004F07BA /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CB031B582C21553A00ED46C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB1FA57D2C33EBD00056407F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CB1FA5802C33EC070056407F /* CartProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProtocol.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
 		CBF0CC572C25660400970EC9 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
 		CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
+		CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1FA57C2C33EBBF0056407F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB1FA57D2C33EBD00056407F /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB1FA57F2C33EBF40056407F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CB1FA5802C33EC070056407F /* CartProtocol.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		CB679F122C00D09700724D0A = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +248,9 @@
 		CB679F362C00D1F200724D0A /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				CB679F4F2C00EA8900724D0A /* CartView.swift */,
+				CB1FA57F2C33EBF40056407F /* DataManager */,
+				CB1FA57C2C33EBBF0056407F /* ViewModel */,
+				CBF3159E2C33EB91004F07BA /* View */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -249,6 +273,7 @@
 				CB7E6F102C0250E6003433BD /* MenuView.swift */,
 				CB7E6F282C0382CF003433BD /* ItemCellView.swift */,
 				CBC6B0EC2C214EEC00D36671 /* RoundRectangleButton.swift */,
+				CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -420,6 +445,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		CBF3159E2C33EB91004F07BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F4F2C00EA8900724D0A /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +547,7 @@
 				CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */,
 				CBC6B0ED2C214EEC00D36671 /* RoundRectangleButton.swift in Sources */,
 				CB7E6F1A2C036AB8003433BD /* ShoppingViewModel.swift in Sources */,
+				CBF3159D2C32AB08004F07BA /* CheckboxToggleStyle.swift in Sources */,
 				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
 				CBF0CC502C25539400970EC9 /* StarRatingView.swift in Sources */,
 				CB7E6F232C037193003433BD /* Product.swift in Sources */,
@@ -524,8 +558,10 @@
 				CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */,
 				CBF0CC4B2C22E5B800970EC9 /* ReviewViewModel.swift in Sources */,
 				CB7E6F2F2C03A74A003433BD /* SearchView.swift in Sources */,
+				CB1FA5812C33EC070056407F /* CartProtocol.swift in Sources */,
 				CB679F4E2C00EA8100724D0A /* ShopListView.swift in Sources */,
 				CBF0CC4E2C22E5D700970EC9 /* ReviewProtocol.swift in Sources */,
+				CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */,
 				CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */,
 				CB7E6F1C2C036B0F003433BD /* SortOptionEnum.swift in Sources */,
 				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
