@@ -7,7 +7,8 @@
 
 import Foundation
 
-final class CratViewModel: ObservableObject {
+final class CartViewModel: ObservableObject {
+    
     @Published private(set) var cartProduct: [Product] = []
     @Published private(set) var selectedProduct: [Product] = []
     @Published private(set) var isAllSelected: Bool = false
@@ -18,5 +19,8 @@ final class CratViewModel: ObservableObject {
         dataManager = CartClass.shared
     }
     
+    func addCartItem(prodId: Int) async {
+        await dataManager.addCartItem(prodId: prodId)
+    }
     
 }

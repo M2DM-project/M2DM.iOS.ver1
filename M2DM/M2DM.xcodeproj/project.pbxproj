@@ -10,6 +10,7 @@
 		CB031B592C21553A00ED46C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB031B582C21553A00ED46C2 /* Assets.xcassets */; };
 		CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA57D2C33EBD00056407F /* CartViewModel.swift */; };
 		CB1FA5812C33EC070056407F /* CartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5802C33EC070056407F /* CartProtocol.swift */; };
+		CB1FA5862C35613B0056407F /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5852C35613B0056407F /* CartResponse.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -60,6 +61,7 @@
 		CB031B582C21553A00ED46C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1FA57D2C33EBD00056407F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		CB1FA5802C33EC070056407F /* CartProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProtocol.swift; sourceTree = "<group>"; };
+		CB1FA5852C35613B0056407F /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 				CB1FA5802C33EC070056407F /* CartProtocol.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CB1FA5842C3561320056407F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CB1FA5852C35613B0056407F /* CartResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		CB679F122C00D09700724D0A = {
@@ -248,6 +258,7 @@
 		CB679F362C00D1F200724D0A /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				CB1FA5842C3561320056407F /* Entity */,
 				CB1FA57F2C33EBF40056407F /* DataManager */,
 				CB1FA57C2C33EBBF0056407F /* ViewModel */,
 				CBF3159E2C33EB91004F07BA /* View */,
@@ -532,6 +543,7 @@
 			files = (
 				CB679F5F2C00FA1100724D0A /* AuthenticationViewModel.swift in Sources */,
 				CBC6B0DF2C1DCBF900D36671 /* SearchResultView.swift in Sources */,
+				CB1FA5862C35613B0056407F /* CartResponse.swift in Sources */,
 				CB679F5D2C00F7E600724D0A /* KeyChain.swift in Sources */,
 				CB7E6F2B2C038798003433BD /* Coordinator.swift in Sources */,
 				CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */,
