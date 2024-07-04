@@ -55,7 +55,6 @@
 		CBF0CC562C25659C00970EC9 /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */; };
 		CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC572C25660400970EC9 /* ReviewResponse.swift */; };
 		CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */; };
-		CBF3159D2C32AB08004F07BA /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,7 +106,6 @@
 		CBF0CC552C25659C00970EC9 /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
 		CBF0CC572C25660400970EC9 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
 		CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
-		CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +284,6 @@
 				CB7E6F102C0250E6003433BD /* MenuView.swift */,
 				CB7E6F282C0382CF003433BD /* ItemCellView.swift */,
 				CBC6B0EC2C214EEC00D36671 /* RoundRectangleButton.swift */,
-				CBF3159C2C32AB08004F07BA /* CheckboxToggleStyle.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */,
 				CBC6B0ED2C214EEC00D36671 /* RoundRectangleButton.swift in Sources */,
 				CB7E6F1A2C036AB8003433BD /* ShoppingViewModel.swift in Sources */,
-				CBF3159D2C32AB08004F07BA /* CheckboxToggleStyle.swift in Sources */,
 				CB679F502C00EA8900724D0A /* CartView.swift in Sources */,
 				CBF0CC502C25539400970EC9 /* StarRatingView.swift in Sources */,
 				CB7E6F232C037193003433BD /* Product.swift in Sources */,

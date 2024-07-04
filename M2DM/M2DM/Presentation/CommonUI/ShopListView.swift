@@ -22,7 +22,7 @@ struct ShopListView: View {
             Color.background
             VStack {
                 Spacer()
-                    .frame(height: 80)
+                    .frame(height: 100)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(CategoryEnum.allCases, id: \.self) { item in
@@ -77,6 +77,8 @@ struct ShopListView: View {
                     }
                 }
             }
+            .navigationTitle("m2Dm")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

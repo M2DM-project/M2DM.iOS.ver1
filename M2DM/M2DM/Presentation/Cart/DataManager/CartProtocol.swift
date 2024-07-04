@@ -13,6 +13,7 @@ protocol CartProtocol {
     func addCartItem(prodId: Int) async
     func increaseCartItem(itemId: Int) async
     func decreaseCartItem(itemId: Int) async
+    func deleteCartItems(itemsId: [Int]) async
 }
 
 final class CartClass {
@@ -142,6 +143,45 @@ extension CartClass: CartProtocol {
             // TODO: 에러 처리
             #if DEBUG
             print("장바구니 increase 실패")
+            #endif
+        }
+    }
+    
+    func deleteCartItems(itemsId: [Int]) async {
+        var url = "\(Constant.BASE_URL)/cartItem/delete/selected?"
+        if itemsId.count > 1 {
+            for item in 0..<itemsId.count-1 {
+                url += "itemsId%5B%5D=\(itemsId[item])&"
+            }
+        }
+        url += "itemsId%5B%5D=\(itemsId[itemsId.count - 1])"
+        
+        let token = KeyChain.read(key: "access_token") ?? ""
+        
+        #if DEBUG
+        print("\(url)")
+        print("\(token)")
+        
+        #endif
+        let request = AF.request(url,
+                                 method: .delete,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default,
+                                 headers: ["Authorization": "Bearer \(token)"])
+        let dataTask = request.serializingDecodable(CartAddResponse.self)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            #if DEBUG
+            print("선택 상품 삭제 성공")
+            print("\(value.message)")
+            #endif
+            
+        case .failure(_):
+            // TODO: 에러 처리
+            #if DEBUG
+            print("선택 상품 삭제 실패")
             #endif
         }
     }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject private var cartViewModel: CartViewModel
-    // 임시
-    @State var isSelected: Bool = false
+    @State private var deliveryFee: Int = 0
     
     var body: some View {
         ZStack {
@@ -20,16 +19,26 @@ struct CartView: View {
                     Spacer()
                         .frame(height: 80)
                     HStack {
-                        Toggle("전체선택", isOn: $isSelected)
-                            .toggleStyle(CheckboxToggleStyle())
-                            .onChange(of: isSelected, {
-                                
-                            })
+                        Button(action: {
+                            cartViewModel.toggleAllSelectedItems()
+                        }, label: {
+                            HStack {
+                                Image(systemName: cartViewModel.isAllSelected ? "checkmark.square.fill" : "square")
+                                Text("전체선택")
+                                    .foregroundStyle(.textGray)
+                                    .fontWeight(.bold)
+                            }
+                        })
+
                         Spacer()
                         Text("상품삭제")
                             .foregroundStyle(.textLightGray)
                             .onTapGesture {
                                 // TODO: 선택된 상품 삭제
+                                Task {
+                                    await cartViewModel.deleteCartItems()
+                                    await cartViewModel.reloadCartItems()
+                                }
                             }
                     }
                     .padding(.vertical)
@@ -52,7 +61,7 @@ struct CartView: View {
                             HStack {
                                 Text("총 상품금액")
                                 Spacer()
-                                Text("\(cartViewModel.cart.price)원")
+                                Text("\(cartViewModel.selectedCartItemsSum)원")
                                     .fontWeight(.bold)
                             }
                             .padding(.bottom, 5)
@@ -60,14 +69,14 @@ struct CartView: View {
                             HStack {
                                 Text("배송비")
                                 Spacer()
-                                Text("3000원")
+                                Text("\(deliveryFee)원")
                                     .fontWeight(.bold)
                             }
                             
                             HStack {
                                 Text("결제 금액")
                                 Spacer()
-                                Text("\(cartViewModel.cart.price + 3000)원")
+                                Text("\(cartViewModel.selectedCartItemsSum + deliveryFee)원")
                             }
                             .font(.title3)
                             .fontWeight(.bold)
@@ -77,7 +86,7 @@ struct CartView: View {
                     }
                     .padding(.vertical)
                     
-                    RoundRectangleButton(title: "구매하기")
+                    RoundRectangleButton(title: "구매하기", isDisabled: cartViewModel.selectedCartItemsId.count == 0)
                     
                     Spacer()
                         .frame(height: 100)
@@ -91,7 +100,7 @@ struct CartView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             Task {
-                await cartViewModel.loadCartItems()
+                await cartViewModel.firstLoadCartItems()
             }
         }
     }
@@ -100,12 +109,10 @@ struct CartView: View {
 fileprivate extension CartView {
     func cartItemView(_ item: CartItem) -> some View {
         HStack {
-            // TODO: 체크박스
-            Image(systemName: isSelected ? "checkmark.square.fill" : "square")
+            Image(systemName: cartViewModel.selectedCartItemsId.contains(item.id) ? "checkmark.square.fill" : "square")
                 .foregroundStyle(.accent)
                 .onTapGesture {
-                    // TODO: viewmodel에서 array에 넣고 빼고 ..
-                    
+                    cartViewModel.toggleSelectedItemsId(item: item)
                 }
             
             Image("shopImage\(item.product.id)")
@@ -122,7 +129,7 @@ fileprivate extension CartView {
                             if item.count > 1 {
                                 Task {
                                     await cartViewModel.decreaseCartItem(itemId: item.id)
-                                    await cartViewModel.loadCartItems()
+                                    await cartViewModel.reloadCartItems()
                                 }
                             }
                         }, label: {
@@ -139,7 +146,7 @@ fileprivate extension CartView {
                         Button{
                             Task {
                                 await cartViewModel.increaseCartItem(itemId: item.id)
-                                await cartViewModel.loadCartItems()
+                                await cartViewModel.reloadCartItems()
                             }
                         } label: {
                             Image(systemName: "plus.app.fill")
