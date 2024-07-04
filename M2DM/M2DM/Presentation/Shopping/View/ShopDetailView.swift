@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ShopDetailView: View {
+    @EnvironmentObject private var coordinator: Coordinator
     @EnvironmentObject private var shoppingViewModel: ShoppingViewModel
     @StateObject private var reviewViewModel = ReviewViewModel()
+    @EnvironmentObject private var cartViewModel: CartViewModel
     
     @State private var reviewText: String = ""
     @State private var reviewRating: Int = 0
@@ -59,7 +61,11 @@ struct ShopDetailView: View {
                     
                     HStack(spacing: 20) {
                         RoundRectangleButton(title: "장바구니") {
-                            
+                            Task {
+                                await cartViewModel.addCartItem(prodId: shoppingViewModel.product.id)
+                                // TODO: 로딩 뷰 만들어서 넣기
+                                coordinator.pop()
+                            }
                         }
                         
                         RoundRectangleButton(title: "구매하기") {
