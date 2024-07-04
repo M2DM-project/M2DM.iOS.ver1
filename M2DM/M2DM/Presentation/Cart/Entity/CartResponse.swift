@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct CartResponse: Decodable {
+struct CartAddResponse: Decodable {
     let statusCode: Int
     let message: String
     let content: String?
+}
+
+struct CartViewResponse: Decodable {
+    let statusCode: Int
+    let message: String
+    let content: Cart
 }
