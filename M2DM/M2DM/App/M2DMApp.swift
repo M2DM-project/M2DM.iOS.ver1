@@ -11,19 +11,35 @@ import KakaoSDKAuth
 
 @main
 struct M2DMApp: App {
+    @StateObject private var shoppingViewModel = ShoppingViewModel()
+    @StateObject private var coordinator = Coordinator.shared
+    @StateObject private var authenticationViewModel = AuthenticationViewModel()
+    @StateObject private var cartViewModel = CartViewModel()
+    
     init() {
         //kakao sdk 초기화
-        guard let kakaoAppKey = Bundle.main.kakaoAppKey else {return}
-        KakaoSDK.initSDK(appKey: kakaoAppKey)
+        guard let kakaoAppKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") else {return}
+        KakaoSDK.initSDK(appKey: kakaoAppKey as! String)
     }
+    
+    
     var body: some Scene {
         WindowGroup {
-            M2DMTabView()
-                .onOpenURL { url in
-                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                        _ = AuthController.handleOpenUrl(url: url)
+            ZStack {
+                Color.background
+                LoginView()
+                    .onOpenURL { url in
+                        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                            _ = AuthController.handleOpenUrl(url: url)
+                        }
                     }
-                }
+            }
+            .ignoresSafeArea()
         }
+        .environmentObject(shoppingViewModel)
+        .environmentObject(coordinator)
+        .environmentObject(authenticationViewModel)
+        .environmentObject(cartViewModel)
+        
     }
 }

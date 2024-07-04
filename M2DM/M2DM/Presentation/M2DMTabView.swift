@@ -8,8 +8,58 @@
 import SwiftUI
 
 struct M2DMTabView: View {
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $coordinator.selectedTab) {
+            NavigationStack(path: $coordinator.shoppingPath) {
+                ShopListView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("MAIN")
+            }
+            .tag(TabViewType.shopping)
+            
+            NavigationStack(path: $coordinator.menuPath) {
+                MenuView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
+            }
+            .tabItem {
+                Image(systemName: "line.3.horizontal")
+                Text("MENU")
+            }
+            .tag(TabViewType.menu)
+            
+            NavigationStack(path: $coordinator.cartPath) {
+                CartView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
+            }
+            .tabItem {
+                Image(systemName: "cart.fill")
+                Text("CART")
+            }
+            .tag(TabViewType.cart)
+            
+            NavigationStack(path: $coordinator.mypagePath) {
+                MyPageView()
+                    .navigationDestination(for: Page.self) { page in
+                        coordinator.build(page)
+                    }
+            }
+            .tabItem {
+                Image(systemName: "person")
+                Text("MYPAGE")
+            }
+            .tag(TabViewType.mypage)
+        }
     }
 }
 
