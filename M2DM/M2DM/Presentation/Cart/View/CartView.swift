@@ -34,7 +34,6 @@ struct CartView: View {
                         Text("상품삭제")
                             .foregroundStyle(.textLightGray)
                             .onTapGesture {
-                                // TODO: 선택된 상품 삭제
                                 Task {
                                     await cartViewModel.deleteCartItems()
                                     await cartViewModel.reloadCartItems()
