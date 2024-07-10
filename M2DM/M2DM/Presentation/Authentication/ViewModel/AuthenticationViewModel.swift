@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser

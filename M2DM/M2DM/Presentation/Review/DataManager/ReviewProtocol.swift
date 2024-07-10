@@ -45,6 +45,7 @@ extension ReviewClass: ReviewProtocol {
             #if DEBUG
             print("리뷰 등록 실패")
             #endif
+            //TODO: reissue api 해보기..
         }
     }
 }
