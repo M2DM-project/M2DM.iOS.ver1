@@ -70,8 +70,12 @@ struct ShopListView: View {
                                 .frame(width: 200, height: 200)
                                 .onTapGesture {
                                     Task {
-                                        await shoppingViewModel.loadOneProduct(id: item.id)
-                                        coordinator.appendPath(.shopDetailView)
+                                        if coordinator.shopType == .shop {
+                                            await shoppingViewModel.loadOneProduct(id: item.id)
+                                            coordinator.appendPath(.shopDetailView)
+                                        } else if coordinator.shopType == .groupPurchase {
+                                            coordinator.appendPath(.groupPurchaseDetailView)
+                                        }
                                     }
                                 }
                         }
