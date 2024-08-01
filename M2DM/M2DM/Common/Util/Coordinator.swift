@@ -16,6 +16,10 @@ enum Page {
     case searchView
     case searchResultView
     case shopDetailView
+    
+    case menuView
+    
+    case groupPurchaseDetailView
 }
 
 final class Coordinator: ObservableObject {
@@ -25,6 +29,8 @@ final class Coordinator: ObservableObject {
     var fromTab: Page = .shopListView
     
     var searchText: String = ""
+    
+    var shopType: ShopTypeEnum = .shop
     
     //MARK: - NavigationPath
     
@@ -44,6 +50,12 @@ final class Coordinator: ObservableObject {
             SearchResultView()
         case .shopDetailView:
             ShopDetailView()
+            
+        case .menuView:
+            MenuView()
+            
+        case .groupPurchaseDetailView:
+            GroupPurchaseDetailView()
         }
     }
     

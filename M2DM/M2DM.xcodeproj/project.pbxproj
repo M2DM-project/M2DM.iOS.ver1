@@ -14,6 +14,7 @@
 		CB1FA5882C367B970056407F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5872C367B970056407F /* Cart.swift */; };
 		CB1FA5BA2C3D70690056407F /* TokenReissueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5B92C3D70690056407F /* TokenReissueProtocol.swift */; };
 		CB1FA5BC2C3D71580056407F /* TokenReissueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5BB2C3D71580056407F /* TokenReissueViewModel.swift */; };
+		CB1FA5D02C4A48E90056407F /* ShopTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5CF2C4A48E90056407F /* ShopTypeEnum.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -23,7 +24,7 @@
 		CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */; };
 		CB679F4E2C00EA8100724D0A /* ShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4D2C00EA8100724D0A /* ShopListView.swift */; };
 		CB679F502C00EA8900724D0A /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F4F2C00EA8900724D0A /* CartView.swift */; };
-		CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */; };
+		CB679F522C00EA9200724D0A /* GroupPurchaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F512C00EA9200724D0A /* GroupPurchaseDetailView.swift */; };
 		CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F532C00EA9800724D0A /* MyPageView.swift */; };
 		CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F552C00EAA000724D0A /* SecondHandView.swift */; };
 		CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F572C00EAA800724D0A /* ShoppingView.swift */; };
@@ -67,6 +68,7 @@
 		CB1FA5872C367B970056407F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		CB1FA5B92C3D70690056407F /* TokenReissueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReissueProtocol.swift; sourceTree = "<group>"; };
 		CB1FA5BB2C3D71580056407F /* TokenReissueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReissueViewModel.swift; sourceTree = "<group>"; };
+		CB1FA5CF2C4A48E90056407F /* ShopTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTypeEnum.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		CB679F4B2C00E94800724D0A /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		CB679F4D2C00EA8100724D0A /* ShopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListView.swift; sourceTree = "<group>"; };
 		CB679F4F2C00EA8900724D0A /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPurchaseView.swift; sourceTree = "<group>"; };
+		CB679F512C00EA9200724D0A /* GroupPurchaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPurchaseDetailView.swift; sourceTree = "<group>"; };
 		CB679F532C00EA9800724D0A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		CB679F552C00EAA000724D0A /* SecondHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHandView.swift; sourceTree = "<group>"; };
 		CB679F572C00EAA800724D0A /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 				CB1FA5852C35613B0056407F /* CartResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		CB2E9C262C53F1A2007D0B9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB679F512C00EA9200724D0A /* GroupPurchaseDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CB679F122C00D09700724D0A = {
@@ -254,7 +264,7 @@
 		CB679F352C00D1E400724D0A /* GroupPurchase */ = {
 			isa = PBXGroup;
 			children = (
-				CB679F512C00EA9200724D0A /* GroupPurchaseView.swift */,
+				CB2E9C262C53F1A2007D0B9B /* View */,
 			);
 			path = GroupPurchase;
 			sourceTree = "<group>";
@@ -359,6 +369,7 @@
 				CB7E6F132C025FF9003433BD /* CategoryEnum.swift */,
 				CB7E6F1B2C036B0F003433BD /* SortOptionEnum.swift */,
 				CBF0CC512C255F1400970EC9 /* ReviewSortOptionsEnum.swift */,
+				CB1FA5CF2C4A48E90056407F /* ShopTypeEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -555,11 +566,12 @@
 				CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */,
 				CB7E6F252C03727C003433BD /* ShoppingtProtocol.swift in Sources */,
 				CB679F582C00EAA800724D0A /* ShoppingView.swift in Sources */,
-				CB679F522C00EA9200724D0A /* GroupPurchaseView.swift in Sources */,
+				CB679F522C00EA9200724D0A /* GroupPurchaseDetailView.swift in Sources */,
 				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
 				CB7E6F1E2C036FCC003433BD /* ProductResponse.swift in Sources */,
 				CB1FA5BC2C3D71580056407F /* TokenReissueViewModel.swift in Sources */,
 				CBF0CC522C255F1400970EC9 /* ReviewSortOptionsEnum.swift in Sources */,
+				CB1FA5D02C4A48E90056407F /* ShopTypeEnum.swift in Sources */,
 				CBF0CC472C22C10500970EC9 /* ReviewCell.swift in Sources */,
 				CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */,
 				CB7E6F142C025FF9003433BD /* CategoryEnum.swift in Sources */,

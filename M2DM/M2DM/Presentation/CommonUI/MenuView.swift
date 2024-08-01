@@ -8,7 +8,39 @@
 import SwiftUI
 
 struct MenuView: View {
+    @EnvironmentObject private var coordinator: Coordinator
     var body: some View {
-        Text("Menu")
+        HStack {
+            VStack(alignment: .leading, spacing: 30) {
+                Spacer()
+                    .frame(height: 100)
+                Text("상품 구매")
+                    .onTapGesture {
+                        coordinator.selectedTab = .shopping
+//                        coordinator.shoppingPath
+                    }
+                Text("중고 거래")
+                    .onTapGesture {
+                        coordinator.appendPath(.shopListView)
+                        coordinator.shopType = .secondhand
+                    }
+                Text("공동 구매")
+                    .onTapGesture {
+                        coordinator.appendPath(.shopListView)
+                        coordinator.shopType = .groupPurchase
+                    }
+                Text("자주 묻는 질문")
+                Spacer()
+            }
+            .font(.system(size: 20))
+            .foregroundStyle(.textGray)
+            .padding(.leading, 40)
+            
+            Spacer()
+        }
+        .background(Color.background)
+        .navigationTitle("메뉴")
+        .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea()
     }
 }
