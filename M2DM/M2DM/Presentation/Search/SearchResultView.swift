@@ -28,6 +28,7 @@ struct SearchResultView: View {
                     }
                 }
             }
+            .scrollIndicators(.hidden)
         }
         .toolbarRole(.editor)
         .navigationTitle(coordinator.searchText)

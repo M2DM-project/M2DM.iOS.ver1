@@ -26,7 +26,7 @@ struct MenuView: View {
                     }
                 Text("공동 구매")
                     .onTapGesture {
-                        coordinator.appendPath(.shopListView)
+                        coordinator.appendPath(.groupPurchaseListView)
                         coordinator.shopType = .groupPurchase
                     }
                 Text("자주 묻는 질문")

@@ -1,0 +1,47 @@
+//
+//  GroupPurchaseProtocol.swift
+//  M2DM
+//
+//  Created by 최주리 on 8/1/24.
+//
+
+import Alamofire
+import Foundation
+
+protocol GroupPurchaseProtocol {
+    func loadAllGPList() async -> GroupPurchaseResponse
+}
+
+final class GroupPurchaseClass {
+    static let shared: GroupPurchaseProtocol = GroupPurchaseClass()
+}
+
+extension GroupPurchaseClass: GroupPurchaseProtocol {
+    
+    func loadAllGPList() async -> GroupPurchaseResponse {
+        let url = "\(Constant.BASE_URL)/gp/list"
+        
+        #if DEBUG
+        print("\(url)")
+        #endif
+        let request = AF.request(url,
+                                 method: .get,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default)
+        let dataTask = request.serializingDecodable(GroupPurchaseResponse.self)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            guard let _ = await dataTask.response.response else {return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])}
+            return value
+            
+        case .failure(_):
+            // TODO: 에러 처리
+            #if DEBUG
+            print("전체 상품 불러오기 실패")
+            #endif
+            return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])
+        }
+    }
+}

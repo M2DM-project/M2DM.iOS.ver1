@@ -12,6 +12,7 @@ import KakaoSDKAuth
 @main
 struct M2DMApp: App {
     @StateObject private var shoppingViewModel = ShoppingViewModel()
+    @StateObject private var groupPurchaseViewModel = GroupPurchaseViewModel()
     @StateObject private var coordinator = Coordinator.shared
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
     @StateObject private var cartViewModel = CartViewModel()
@@ -37,6 +38,7 @@ struct M2DMApp: App {
             .ignoresSafeArea()
         }
         .environmentObject(shoppingViewModel)
+        .environmentObject(groupPurchaseViewModel)
         .environmentObject(coordinator)
         .environmentObject(authenticationViewModel)
         .environmentObject(cartViewModel)

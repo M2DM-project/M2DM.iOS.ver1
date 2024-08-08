@@ -19,6 +19,7 @@ enum Page {
     
     case menuView
     
+    case groupPurchaseListView
     case groupPurchaseDetailView
 }
 
@@ -53,7 +54,9 @@ final class Coordinator: ObservableObject {
             
         case .menuView:
             MenuView()
-            
+        
+        case .groupPurchaseListView:
+            GroupPurchaseListView()
         case .groupPurchaseDetailView:
             GroupPurchaseDetailView()
         }
