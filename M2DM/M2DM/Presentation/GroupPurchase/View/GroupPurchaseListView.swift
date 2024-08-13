@@ -70,6 +70,7 @@ struct GroupPurchaseListView: View {
                                 .frame(width: 200, height: 200)
                                 .onTapGesture {
                                     Task {
+                                        groupPurchaseViewModel.loadOneProduct(id:item.id)
                                         coordinator.appendPath(.groupPurchaseDetailView)
                                     }
                                 }

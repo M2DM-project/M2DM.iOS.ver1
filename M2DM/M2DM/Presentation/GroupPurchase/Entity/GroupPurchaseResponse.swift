@@ -12,3 +12,9 @@ struct GroupPurchaseResponse : Decodable {
     let message: String
     let content: [GroupPurchase]
 }
+
+struct GroupPurchaseOneResponse: Decodable {
+    let statusCode: Int
+    let message: String
+    let content: GroupPurchase
+}
