@@ -88,6 +88,7 @@ struct ShopListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         coordinator.appendPath(.searchView)
+                        coordinator.fromTab = .shopListView
                     }, label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()

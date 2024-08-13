@@ -22,8 +22,7 @@ struct M2DMApp: App {
         guard let kakaoAppKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") else {return}
         KakaoSDK.initSDK(appKey: kakaoAppKey as! String)
     }
-    
-    
+
     var body: some Scene {
         WindowGroup {
             ZStack {

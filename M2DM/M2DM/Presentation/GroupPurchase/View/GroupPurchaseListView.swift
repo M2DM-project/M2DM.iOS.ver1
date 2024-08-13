@@ -87,6 +87,7 @@ struct GroupPurchaseListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         coordinator.appendPath(.searchView)
+                        coordinator.fromTab = .groupPurchaseListView
                     }, label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()

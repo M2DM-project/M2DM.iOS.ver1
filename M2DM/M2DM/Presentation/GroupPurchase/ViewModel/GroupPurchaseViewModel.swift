@@ -43,11 +43,11 @@ final class GroupPurchaseViewModel: ObservableObject {
     }
     
     @MainActor
-    func loadSearchProductList(searchText: String) async {
-//        productList = await dataManager.loadSearchProduct(searchText: searchText).content
+    func loadSearchGPProductList(searchText: String) async {
+        gpList = await dataManager.loadSearchGPProduct(searchText: searchText).content
         
         #if DEBUG
-//        print("\(productList.count)")
+        print("\(gpList.count)")
         #endif
     }
     
