@@ -10,6 +10,7 @@ import Foundation
 
 protocol GroupPurchaseProtocol {
     func loadAllGPList() async -> GroupPurchaseResponse
+    func loadProductBySort(category: String, sortOption: String) async -> GroupPurchaseResponse
     func loadSearchGPProduct(searchText: String) async -> GroupPurchaseResponse
 }
 
@@ -46,6 +47,40 @@ extension GroupPurchaseClass: GroupPurchaseProtocol {
         }
     }
     
+    func loadProductBySort(category: String, sortOption: String) async -> GroupPurchaseResponse {
+        var url = "\(Constant.BASE_URL)/gp/sort/category?sortBy=\(sortOption)&cateCode=\(category)"
+        
+        if sortOption == "" {
+            url = "\(Constant.BASE_URL)/gp/sort/category?cateCode=\(category)"
+        } else if category == "GEN" {
+            url = "\(Constant.BASE_URL)/gp/sort/category?sortBy=\(sortOption)"
+        }
+        
+        #if DEBUG
+        print("\(url)")
+        #endif
+        let request = AF.request(url,
+                                 method: .get,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default)
+        let dataTask = request.serializingDecodable(GroupPurchaseResponse.self)
+        
+        switch await dataTask.result {
+            
+        case .success(let value):
+            guard let _ = await dataTask.response.response else {return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])}
+            return value
+            
+        case .failure(_):
+            // TODO: 에러 처리
+            #if DEBUG
+            print("상품 정렬 실패")
+            #endif
+            return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])
+        }
+    }
+    
+    
     func loadSearchGPProduct(searchText: String) async -> GroupPurchaseResponse {
         let url = "\(Constant.BASE_URL)/gp/search/{keyword}?keyword=\(searchText)"
         
@@ -72,4 +107,6 @@ extension GroupPurchaseClass: GroupPurchaseProtocol {
             return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])
         }
     }
+    
+    
 }

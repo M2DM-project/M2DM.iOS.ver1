@@ -35,10 +35,10 @@ final class GroupPurchaseViewModel: ObservableObject {
         selectedCategory = category
         selectedSortOption = sortOption
         
-//        productList = await dataManager.loadProductBySort(category: category.description, sortOption: sortOption.description).content
+        gpList = await dataManager.loadProductBySort(category: category.description, sortOption: sortOption.description).content
         
         #if DEBUG
-//        print("\(productList.count)")
+        print("\(gpList.count)")
         #endif
     }
     
