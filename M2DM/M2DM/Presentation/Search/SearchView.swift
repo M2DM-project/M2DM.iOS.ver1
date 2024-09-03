@@ -19,13 +19,13 @@ struct SearchView: View {
         .searchable(text: $searchText)
         .onSubmit(of: .search) {
             if !searchText.isEmpty {
-                coordinator.fromTab = .searchView
                 coordinator.searchText = searchText
                 coordinator.appendPath(.searchResultView)
                 
                 searchText = ""
             }
         }
+        .background(Color.background)
     }
 }
 

@@ -8,30 +8,17 @@
 import SwiftUI
 
 struct GroupPurchaseDetailView: View {
-    
+    @EnvironmentObject private var groupPurchaseViewModel: GroupPurchaseViewModel
     @EnvironmentObject private var coordinator: Coordinator
-    @EnvironmentObject private var shoppingViewModel: ShoppingViewModel
-    @StateObject private var reviewViewModel = ReviewViewModel()
-    @EnvironmentObject private var cartViewModel: CartViewModel
-    
-    @State private var reviewText: String = ""
-    @State private var reviewRating: Int = 0
-    
+    @State private var isShowing: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView {
-                HStack {
-                    Text("\(shoppingViewModel.product.cateCode)")
-                    Spacer()
-                }
-                .foregroundStyle(.textGray)
-                .fontWeight(.bold)
-                
                 ZStack {
                     Rectangle()
                         .foregroundStyle(.white)
-                    Image("shopImage\(shoppingViewModel.product.id)")
+                    Image("gpImage\(groupPurchaseViewModel.product.id)")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
@@ -42,10 +29,10 @@ struct GroupPurchaseDetailView: View {
                         .foregroundStyle(.white)
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("\(shoppingViewModel.product.name)")
+                            Text("\(groupPurchaseViewModel.product.name)")
                                 .font(.system(size: 23))
                                 .fontWeight(.bold)
-                            Text("\(shoppingViewModel.product.price)원")
+                            Text("\(groupPurchaseViewModel.product.price)원")
                                 .font(.system(size: 16))
                         }
                         .padding()
@@ -67,7 +54,7 @@ struct GroupPurchaseDetailView: View {
                                 .fontWeight(.bold)
                             Spacer()
                         }
-                        Text("\(shoppingViewModel.product.content)")
+                        Text("\(groupPurchaseViewModel.product.content)")
                     }
                     .padding()
                 }
@@ -81,7 +68,6 @@ struct GroupPurchaseDetailView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("진행 기간")
-                            Text("남은 기간")
                             Text("현재 수량 / 목표 수량")
                             Text("목표까지 남은 수량")
                         }
@@ -91,10 +77,9 @@ struct GroupPurchaseDetailView: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 10) {
-                            Text("23/11/11 ~ 23/12/12")
-                            Text("5일")
-                            Text("30개 / 40개")
-                            Text("10개")
+                            Text("\(groupPurchaseViewModel.product.start) ~ \(groupPurchaseViewModel.product.end)")
+                            Text("\(groupPurchaseViewModel.product.nowQty)개 / \(groupPurchaseViewModel.product.goalQty)개")
+                            Text("\(groupPurchaseViewModel.product.goalQty - groupPurchaseViewModel.product.nowQty)개")
                         }
                         .font(.system(size: 15))
                         .fontWeight(.bold)
@@ -103,8 +88,9 @@ struct GroupPurchaseDetailView: View {
                 }
                 .padding(.bottom)
                 
-                RoundRectangleButton(title: "참여하기") {
+                RoundRectangleButton(title: "참여하기", isDisabled: groupPurchaseViewModel.product.state != .ONGOING && groupPurchaseViewModel.product.state != .ACHIEVED) {
                     //TODO: 공동구매 참여
+                    isShowing = true
                 }
             }
             .scrollIndicators(.hidden)
@@ -113,6 +99,10 @@ struct GroupPurchaseDetailView: View {
         }
         .background(Color(.background))
         .toolbarRole(.editor)
+        .sheet(isPresented: $isShowing) {
+            GrouppurchaseBottomSheet(item: groupPurchaseViewModel.product, isShowing: $isShowing)
+                .presentationDetents([.medium])
+        }
     }
 }
 

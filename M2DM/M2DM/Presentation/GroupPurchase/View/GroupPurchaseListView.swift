@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ShopListView: View {
-    @EnvironmentObject private var shoppingViewModel: ShoppingViewModel
+struct GroupPurchaseListView: View {
+    @EnvironmentObject private var groupPurchaseViewModel: GroupPurchaseViewModel
     @EnvironmentObject private var coordinator: Coordinator
     
     //그리드 형식 2개
@@ -33,11 +33,11 @@ struct ShopListView: View {
                                     .clipShape(.circle)
                                     .frame(width: 50, height: 50)
                                 Text("\(item.title)")
-                                    .foregroundStyle(shoppingViewModel.selectedCategory == item ? .accent : .textGray)
+                                    .foregroundStyle(groupPurchaseViewModel.selectedCategory == item ? .accent : .textGray)
                             }
                             .onTapGesture {
                                 Task {
-                                    await shoppingViewModel.loadSortedProductList(category: item, sortOption: shoppingViewModel.selectedSortOption)
+                                    await groupPurchaseViewModel.loadSortedProductList(category: item, sortOption: groupPurchaseViewModel.selectedSortOption)
                                 }
                             }
                         }
@@ -50,14 +50,14 @@ struct ShopListView: View {
                         ForEach(SortOptionEnum.allCases, id: \.self) { option in
                             Button(action: {
                                 Task {
-                                    await shoppingViewModel.loadSortedProductList(category: shoppingViewModel.selectedCategory, sortOption: option)
+                                    await groupPurchaseViewModel.loadSortedProductList(category: groupPurchaseViewModel.selectedCategory, sortOption: option)
                                 }
                             }, label: {
                                 Text("\(option.title)")
                             })
                         }
                     } label: {
-                        Label("\(shoppingViewModel.selectedSortOption.title)", systemImage: "chevron.down")
+                        Label("\(groupPurchaseViewModel.selectedSortOption.title)", systemImage: "chevron.down")
                             .font(.system(size: 15))
                     }
                     .frame(width: 100, height: 35)
@@ -65,22 +65,21 @@ struct ShopListView: View {
                 
                 ScrollView {
                     LazyVGrid (columns: layout) {
-                        ForEach(shoppingViewModel.productList) { item in
-                            ItemCellView(product: item)
+                        ForEach(groupPurchaseViewModel.gpList) { item in
+                            GroupPurchaseItemCellView(product: item)
                                 .frame(width: 200, height: 200)
                                 .onTapGesture {
                                     Task {
-                                        if coordinator.shopType == .shop {
-                                            await shoppingViewModel.loadOneProduct(id: item.id)
-                                            coordinator.appendPath(.shopDetailView)
-                                        } else if coordinator.shopType == .groupPurchase {
-                                            coordinator.appendPath(.groupPurchaseDetailView)
-                                        }
+                                        groupPurchaseViewModel.loadOneProduct(id:item.id)
+                                        coordinator.appendPath(.groupPurchaseDetailView)
                                     }
                                 }
                         }
                     }
+                    Spacer()
+                        .frame(height: 200)
                 }
+                .scrollIndicators(.hidden)
             }
             .navigationTitle(coordinator.shopType.title)
             .navigationBarTitleDisplayMode(.inline)
@@ -89,6 +88,7 @@ struct ShopListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         coordinator.appendPath(.searchView)
+                        coordinator.fromTab = .groupPurchaseListView
                     }, label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()
@@ -102,23 +102,11 @@ struct ShopListView: View {
                 print("\(coordinator.selectedTab)")
                 
                 Task {
-                    switch coordinator.shopType {
-                    case .shop:
-                        await shoppingViewModel.loadAllProduct()
-                    case .groupPurchase:
-                        print("gp")
-                    case .secondhand:
-                        print("sh")
-                    }
-                    
+                    await groupPurchaseViewModel.loadAllGPList()
                 }
             }
-            .onChange(of: coordinator.selectedTab, {
-                if coordinator.selectedTab == .shopping {
-                    coordinator.shopType = .shop
-                }
-            })
         }
         .ignoresSafeArea()
     }
 }
+
