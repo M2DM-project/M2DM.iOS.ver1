@@ -10,6 +10,7 @@ import SwiftUI
 struct GroupPurchaseDetailView: View {
     @EnvironmentObject private var groupPurchaseViewModel: GroupPurchaseViewModel
     @EnvironmentObject private var coordinator: Coordinator
+    @State private var isShowing: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -87,8 +88,9 @@ struct GroupPurchaseDetailView: View {
                 }
                 .padding(.bottom)
                 
-                RoundRectangleButton(title: "참여하기", isDisabled: groupPurchaseViewModel.product.state != .ONGOING) {
+                RoundRectangleButton(title: "참여하기", isDisabled: groupPurchaseViewModel.product.state != .ONGOING && groupPurchaseViewModel.product.state != .ACHIEVED) {
                     //TODO: 공동구매 참여
+                    isShowing = true
                 }
             }
             .scrollIndicators(.hidden)
@@ -97,6 +99,10 @@ struct GroupPurchaseDetailView: View {
         }
         .background(Color(.background))
         .toolbarRole(.editor)
+        .sheet(isPresented: $isShowing) {
+            GrouppurchaseBottomSheet(item: groupPurchaseViewModel.product, isShowing: $isShowing)
+                .presentationDetents([.medium])
+        }
     }
 }
 
