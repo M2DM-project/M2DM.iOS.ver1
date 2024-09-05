@@ -16,8 +16,8 @@ struct MenuView: View {
                     .frame(height: 100)
                 Text("상품 구매")
                     .onTapGesture {
+                        //TODO: MAIN Tab으로 이동하도록 해야 함
                         coordinator.selectedTab = .shopping
-//                        coordinator.shoppingPath
                     }
                 Text("중고 거래")
                     .onTapGesture {

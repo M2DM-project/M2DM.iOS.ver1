@@ -45,7 +45,7 @@ extension CartClass: CartProtocol {
             return value
             #endif
             
-        case .failure(let value):
+        case .failure(_):
             // TODO: 에러 처리
             #if DEBUG
             print("장바구니 불러오기 실패")
