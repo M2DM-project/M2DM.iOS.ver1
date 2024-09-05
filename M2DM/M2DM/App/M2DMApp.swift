@@ -16,6 +16,7 @@ struct M2DMApp: App {
     @StateObject private var coordinator = Coordinator.shared
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
     @StateObject private var cartViewModel = CartViewModel()
+    @StateObject private var orderViewModel = OrderViewModel()
     
     init() {
         //kakao sdk 초기화
@@ -41,6 +42,7 @@ struct M2DMApp: App {
         .environmentObject(coordinator)
         .environmentObject(authenticationViewModel)
         .environmentObject(cartViewModel)
+        .environmentObject(orderViewModel)
         
     }
 }

@@ -1,18 +1,18 @@
 //
-//  GrouppurchaseBottomSheet.swift
+//  ShopBottomSheet.swift
 //  M2DM
 //
-//  Created by 최주리 on 9/3/24.
+//  Created by 최주리 on 9/5/24.
 //
 
 import SwiftUI
 
-struct GrouppurchaseBottomSheet: View {
+struct ShopBottomSheet: View {
     @EnvironmentObject private var coordinator: Coordinator
     @EnvironmentObject private var orderViewModel: OrderViewModel
     
     @State private var count = 1
-    var item: GroupPurchase
+    var item: DetailProduct
     @Binding var isShowing: Bool
     
     
@@ -47,9 +47,7 @@ struct GrouppurchaseBottomSheet: View {
                         .frame(width: 50)
                     
                     Button{
-                        if count < item.maxQty {
-                            count += 1
-                        }
+                        count += 1
                     } label: {
                         Image(systemName: "plus.app.fill")
                             .resizable()
@@ -65,10 +63,12 @@ struct GrouppurchaseBottomSheet: View {
                 }
             }
             Spacer()
-            RoundRectangleButton(title: "참여하기") {
+            RoundRectangleButton(title: "구매하기") {
                 Task {
                     isShowing = false
                     orderViewModel.price = item.price * count
+                    orderViewModel.qty = count
+                    orderViewModel.productId = item.id
                     coordinator.appendPath(.orderAddressView)
                 }
             }
