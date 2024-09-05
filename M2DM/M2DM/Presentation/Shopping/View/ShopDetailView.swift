@@ -15,6 +15,7 @@ struct ShopDetailView: View {
     
     @State private var reviewText: String = ""
     @State private var reviewRating: Int = 0
+    @State private var isShowing: Bool = false
     
     var body: some View {
         ZStack {
@@ -69,7 +70,7 @@ struct ShopDetailView: View {
                         }
                         
                         RoundRectangleButton(title: "구매하기") {
-                            
+                            isShowing = true
                         }
                     }
                     .padding(.bottom)
@@ -175,6 +176,10 @@ struct ShopDetailView: View {
                 .padding(.bottom, 80)
             }
             .toolbarRole(.editor)
+            .sheet(isPresented: $isShowing, content: {
+                ShopBottomSheet(item: shoppingViewModel.product, isShowing: $isShowing)
+                    .presentationDetents([.medium])
+            })
         }
         .ignoresSafeArea()
         .onAppear {

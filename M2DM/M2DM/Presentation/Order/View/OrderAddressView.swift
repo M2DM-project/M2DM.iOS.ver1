@@ -10,7 +10,7 @@ import WebKit
 
 struct OrderAddressView: View {
     @EnvironmentObject private var coordinator: Coordinator
-    var price: Int
+    @EnvironmentObject private var orderViewModel: OrderViewModel
     
     @State private var orderName: String = ""
     @State private var orderPhone: String = ""
@@ -135,8 +135,6 @@ struct OrderAddressView: View {
                         }
                         
                         if isCard {
-                            //TODO: 카드 선택
-                            
                             Menu(content: {
                                 ForEach(CardEnum.allCases, id: \.self) { option in
                                     Button("\(option.description)") {
@@ -168,7 +166,7 @@ struct OrderAddressView: View {
                             Text("결제 금액")
                                 .font(.system(size: 18))
                             Spacer()
-                            Text("\(price)원")
+                            Text("\(coordinator.price)원")
                         }
                         .font(.system(size: 18))
                         .fontWeight(.bold)
@@ -176,12 +174,11 @@ struct OrderAddressView: View {
                     .padding()
                     
                     //TODO: disable 처리 하기
-                    RoundRectangleButton(title: "참여하기") {
+                    RoundRectangleButton(title: coordinator.shopType == .groupPurchase ? "참여하기" : "구매하기") {
                         Task {
                             //TODO: 공동구매에서 참여 완료 + acheive시 성공한다는 안내 alert 띄우기
-                            
+                            orderViewModel.orderProduct(id: coordinator.productId, qty: coordinator.qty, name: name, contact: phone, zipcode: zipcode, street: streetAddr, detail: detailAddr)
                             isShowingSuccessView = true
-                            coordinator.pop(2)
                         }
                     }
                     .padding()

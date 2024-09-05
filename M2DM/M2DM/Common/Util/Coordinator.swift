@@ -33,6 +33,8 @@ final class Coordinator: ObservableObject {
     
     var searchText: String = ""
     var price: Int = 0
+    var qty: Int = 0
+    var productId: Int = 0
     
     var shopType: ShopTypeEnum = .shop
     
@@ -64,7 +66,7 @@ final class Coordinator: ObservableObject {
             GroupPurchaseDetailView()
             
         case .orderAddressView:
-            OrderAddressView(price: price)
+            OrderAddressView()
         }
     }
     
