@@ -24,6 +24,17 @@ struct OrderAddressView: View {
     
     @State private var pay: String = "카드사 선택"
     
+    private var mustTextFields: [String] {[
+        orderName.description,
+        orderPhone.description,
+        orderEmail.description,
+        name.description,
+        phone.description,
+        streetAddr.description,
+        zipcode.description,
+        detailAddr.description
+    ]}
+    
     @State private var isCard: Bool = true
     @State private var isCash: Bool = false
     
@@ -95,7 +106,7 @@ struct OrderAddressView: View {
                                         .disabled(true)
                                         .frame(width: 200)
                                 }
-                                TextField("주소", text: $streetAddr)
+                                TextField("도로명 주소", text: $streetAddr)
                                     .disabled(true)
                                     .frame(width: 270)
                                 TextField("상세 주소 입력", text: $detailAddr)
@@ -174,9 +185,11 @@ struct OrderAddressView: View {
                     .padding()
                     
                     //TODO: disable 처리 하기
-                    RoundRectangleButton(title: coordinator.shopType == .groupPurchase ? "참여하기" : "구매하기") {
+                    RoundRectangleButton(title: coordinator.shopType == .groupPurchase ? "참여하기" : "구매하기", isDisabled: isDisabled) {
                         Task {
+                            
                             //TODO: 공동구매에서 참여 완료 + acheive시 성공한다는 안내 alert 띄우기
+                            
                             if coordinator.selectedTab == .shopping {
                                 orderViewModel.orderProduct(id: orderViewModel.productId, qty: orderViewModel.qty, name: name, contact: phone, zipcode: zipcode, street: streetAddr, detail: detailAddr)
                             } else if coordinator.selectedTab == .cart {
@@ -202,7 +215,30 @@ struct OrderAddressView: View {
         .sheet(isPresented: $isShowingWebView, content: {
             WebView(url: URL(string: "https://m2dm-project.github.io/M2DM.iOS.ver1/")!, isShowing: $isShowingWebView, addr: $streetAddr, zipcode: $zipcode)
         })
-        
+        .onChange(of: mustTextFields, {
+            var flag = true
+            for item in mustTextFields {
+                if item.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || item == "" {
+                    isDisabled = true
+                    flag = false
+                    break
+                }
+            }
+            
+            if flag {
+                isDisabled = false
+            }
+            
+        })
+        .onChange(of: pay, {
+            if isCard {
+                if pay != "카드사 선택" {
+                    isDisabled = false
+                }
+            } else {
+                isDisabled = false
+            }
+        })
     }
 }
 
