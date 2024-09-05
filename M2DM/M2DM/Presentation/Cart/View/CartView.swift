@@ -29,7 +29,7 @@ struct CartView: View {
                                     .fontWeight(.bold)
                             }
                         })
-
+                        
                         Spacer()
                         Text("상품삭제")
                             .foregroundStyle(.textLightGray)

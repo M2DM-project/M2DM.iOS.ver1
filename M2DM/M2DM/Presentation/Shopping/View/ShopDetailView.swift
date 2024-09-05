@@ -16,6 +16,7 @@ struct ShopDetailView: View {
     @State private var reviewText: String = ""
     @State private var reviewRating: Int = 0
     @State private var isShowing: Bool = false
+    @State private var isShowingSuccess: Bool = false
     
     var body: some View {
         ZStack {
@@ -65,7 +66,7 @@ struct ShopDetailView: View {
                             Task {
                                 await cartViewModel.addCartItem(prodId: shoppingViewModel.product.id)
                                 // TODO: 로딩 뷰 만들어서 넣기
-                                coordinator.pop()
+                                isShowingSuccess = true
                             }
                         }
                         
@@ -180,6 +181,9 @@ struct ShopDetailView: View {
                 ShopBottomSheet(item: shoppingViewModel.product, isShowing: $isShowing)
                     .presentationDetents([.medium])
             })
+            if isShowingSuccess {
+                CartSuccessView()
+            }
         }
         .ignoresSafeArea()
         .onAppear {
