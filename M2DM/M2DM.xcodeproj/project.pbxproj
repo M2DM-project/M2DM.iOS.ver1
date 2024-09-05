@@ -26,6 +26,7 @@
 		CB2E9CAB2C772223007D0B9B /* OrderAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CAA2C772223007D0B9B /* OrderAddressView.swift */; };
 		CB2E9CAD2C86A9EF007D0B9B /* GrouppurchaseBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CAC2C86A9EF007D0B9B /* GrouppurchaseBottomSheet.swift */; };
 		CB2E9CAF2C86BE2B007D0B9B /* CardEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CAE2C86BE2B007D0B9B /* CardEnum.swift */; };
+		CB2E9CB32C870163007D0B9B /* OrderSuccessSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CB22C870163007D0B9B /* OrderSuccessSheet.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -90,6 +91,7 @@
 		CB2E9CAA2C772223007D0B9B /* OrderAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAddressView.swift; sourceTree = "<group>"; };
 		CB2E9CAC2C86A9EF007D0B9B /* GrouppurchaseBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrouppurchaseBottomSheet.swift; sourceTree = "<group>"; };
 		CB2E9CAE2C86BE2B007D0B9B /* CardEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEnum.swift; sourceTree = "<group>"; };
+		CB2E9CB22C870163007D0B9B /* OrderSuccessSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessSheet.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2E9CAA2C772223007D0B9B /* OrderAddressView.swift */,
+				CB2E9CB22C870163007D0B9B /* OrderSuccessSheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				CB7E6F2B2C038798003433BD /* Coordinator.swift in Sources */,
 				CB679F6F2C00FF1700724D0A /* Constant.swift in Sources */,
 				CB7E6F252C03727C003433BD /* ShoppingtProtocol.swift in Sources */,
+				CB2E9CB32C870163007D0B9B /* OrderSuccessSheet.swift in Sources */,
 				CB679F522C00EA9200724D0A /* GroupPurchaseDetailView.swift in Sources */,
 				CB679F542C00EA9800724D0A /* MyPageView.swift in Sources */,
 				CB7E6F1E2C036FCC003433BD /* ProductResponse.swift in Sources */,
