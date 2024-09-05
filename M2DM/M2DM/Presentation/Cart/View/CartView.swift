@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject private var cartViewModel: CartViewModel
+    @EnvironmentObject private var orderViewModel: OrderViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     @State private var deliveryFee: Int = 0
     
     var body: some View {
@@ -85,7 +87,12 @@ struct CartView: View {
                     }
                     .padding(.vertical)
                     
-                    RoundRectangleButton(title: "구매하기", isDisabled: cartViewModel.selectedCartItemsId.count == 0)
+                    RoundRectangleButton(title: "구매하기", isDisabled: cartViewModel.selectedCartItemsId.count == 0) {
+                        
+                        orderViewModel.cartList = cartViewModel.selectedCartItemsId
+                        orderViewModel.price = cartViewModel.selectedCartItemsSum + deliveryFee
+                        coordinator.appendPath(.orderAddressView)
+                    }
                     
                     Spacer()
                         .frame(height: 100)

@@ -166,7 +166,7 @@ struct OrderAddressView: View {
                             Text("결제 금액")
                                 .font(.system(size: 18))
                             Spacer()
-                            Text("\(coordinator.price)원")
+                            Text("\(orderViewModel.price)원")
                         }
                         .font(.system(size: 18))
                         .fontWeight(.bold)
@@ -177,7 +177,12 @@ struct OrderAddressView: View {
                     RoundRectangleButton(title: coordinator.shopType == .groupPurchase ? "참여하기" : "구매하기") {
                         Task {
                             //TODO: 공동구매에서 참여 완료 + acheive시 성공한다는 안내 alert 띄우기
-                            orderViewModel.orderProduct(id: coordinator.productId, qty: coordinator.qty, name: name, contact: phone, zipcode: zipcode, street: streetAddr, detail: detailAddr)
+                            if coordinator.selectedTab == .shopping {
+                                orderViewModel.orderProduct(id: orderViewModel.productId, qty: orderViewModel.qty, name: name, contact: phone, zipcode: zipcode, street: streetAddr, detail: detailAddr)
+                            } else if coordinator.selectedTab == .cart {
+                                orderViewModel.addCartToOrder(name: name, contact: phone, zipcode: zipcode, street: streetAddr, detail: detailAddr)
+                            }
+                            
                             isShowingSuccessView = true
                         }
                     }

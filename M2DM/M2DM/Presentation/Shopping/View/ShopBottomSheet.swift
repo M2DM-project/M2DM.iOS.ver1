@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ShopBottomSheet: View {
+    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var orderViewModel: OrderViewModel
+    
     @State private var count = 1
     var item: DetailProduct
     @Binding var isShowing: Bool
-    @EnvironmentObject private var coordinator: Coordinator
+    
     
     var body: some View {
         VStack {
@@ -63,9 +66,9 @@ struct ShopBottomSheet: View {
             RoundRectangleButton(title: "구매하기") {
                 Task {
                     isShowing = false
-                    coordinator.price = item.price * count
-                    coordinator.qty = count
-                    coordinator.productId = item.id
+                    orderViewModel.price = item.price * count
+                    orderViewModel.qty = count
+                    orderViewModel.productId = item.id
                     coordinator.appendPath(.orderAddressView)
                 }
             }

@@ -14,3 +14,8 @@ struct OrderRequest: Encodable {
     var streetAddr: String
     var detailAddr: String
 }
+
+struct CartOrderRequest: Encodable {
+    var itemIds: [Int]
+    var orderDto: OrderRequest
+}

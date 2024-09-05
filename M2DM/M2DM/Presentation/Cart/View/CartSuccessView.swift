@@ -20,12 +20,7 @@ struct CartSuccessView: View {
                 .padding(.bottom, 20)
             
             RoundRectangleButton(title: "쇼핑 계속하기") {
-                if coordinator.selectedTab == .shopping {
-                    coordinator.pop()
-                } else if coordinator.selectedTab == .menu {
-                    //TODO: 중고거래일 때 pop 처리하기
-                    coordinator.pop(1)
-                }
+                coordinator.pop()
             }
             .frame(width: 200)
         }

@@ -21,12 +21,12 @@ struct OrderSuccessSheet: View {
             
             RoundRectangleButton(title: "쇼핑 계속하기") {
                 if coordinator.selectedTab == .cart {
-                    coordinator.pop(2)
+                    coordinator.pop(1)
                 } else if coordinator.selectedTab == .shopping {
                     coordinator.pop(2)
                 } else if coordinator.selectedTab == .menu {
                     //TODO: 중고거래일 때 pop 처리하기
-                    coordinator.pop(3)
+                    coordinator.pop(2)
                 }
             }
             .frame(width: 200)
