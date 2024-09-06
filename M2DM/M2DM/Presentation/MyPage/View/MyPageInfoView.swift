@@ -11,26 +11,51 @@ struct MyPageInfoView: View {
     @EnvironmentObject private var coordinator: Coordinator
     @EnvironmentObject private var authenticationViewModel: AuthenticationViewModel
     
+    @State private var isEditName: Bool = false
+    // 임시
+    @State private var name: String = "닉네임"
+    @State private var isOkay: Bool = false
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 30) {
                 Spacer()
                     .frame(height: 100)
-                
-                Text("닉네임")
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
+                HStack {
+                    if isEditName {
+                        TextEditor(text: $name)
+                            .frame(height: 40)
+                            .textFieldStyle(.roundedBorder)
+                        RoundRectangleButton(height: 30, fontSize: 13, title: "중복확인") {
+                            //TODO: 중복 확인 api
+                            isOkay = true
+                        }
+                            .frame(width: 50)
+                    } else {
+                        Text("\(name)")
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                    }
+                    Image(systemName: !isEditName ? "pencil" : "checkmark.rectangle.fill")
+                        .foregroundStyle(!isEditName ? .textGray : (isOkay ? .accent : .textGray))
+                        .font(.system(size: 20))
+                        .onTapGesture {
+                            if isEditName {
+                                if isOkay {
+                                    isEditName = false
+                                }
+                            } else {
+                                isEditName = true
+                            }
+                        }
+                }
                 Text("이메일")
                     .font(.system(size: 20))
                 Divider()
                 
-                Text("닉네임 변경")
-                    .onTapGesture {
-                        
-                    }
                 Text("주소 변경")
                     .onTapGesture {
-                        
+                        coordinator.appendPath(.addrEditView)
                     }
                 
                 Divider()

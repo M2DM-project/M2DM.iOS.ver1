@@ -34,6 +34,8 @@
 		CB2E9CC42C8972E0007D0B9B /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CC32C8972E0007D0B9B /* OrderViewModel.swift */; };
 		CB2E9CC62C897988007D0B9B /* CartSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CC52C897988007D0B9B /* CartSuccessView.swift */; };
 		CB2E9CC92C899D9A007D0B9B /* MyPageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */; };
+		CB2E9CCD2C8AE447007D0B9B /* AddrEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */; };
+		CB2E9CCF2C8AE507007D0B9B /* AddrWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CCE2C8AE507007D0B9B /* AddrWebView.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -106,6 +108,8 @@
 		CB2E9CC32C8972E0007D0B9B /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		CB2E9CC52C897988007D0B9B /* CartSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSuccessView.swift; sourceTree = "<group>"; };
 		CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoView.swift; sourceTree = "<group>"; };
+		CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddrEditView.swift; sourceTree = "<group>"; };
+		CB2E9CCE2C8AE507007D0B9B /* AddrWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddrWebView.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			children = (
 				CB679F532C00EA9800724D0A /* MyPageView.swift */,
 				CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */,
+				CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			children = (
 				CB7E6F102C0250E6003433BD /* MenuView.swift */,
 				CBC6B0EC2C214EEC00D36671 /* RoundRectangleButton.swift */,
+				CB2E9CCE2C8AE507007D0B9B /* AddrWebView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -737,6 +743,7 @@
 				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
 				CBC6B0E92C208B7700D36671 /* Review.swift in Sources */,
 				CB1FA5882C367B970056407F /* Cart.swift in Sources */,
+				CB2E9CCD2C8AE447007D0B9B /* AddrEditView.swift in Sources */,
 				CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */,
 				CB2E9CA72C6B5B27007D0B9B /* GroupPurchaseRequest.swift in Sources */,
 				CB2E9CAF2C86BE2B007D0B9B /* CardEnum.swift in Sources */,
@@ -744,6 +751,7 @@
 				CB2E9C892C64BE0C007D0B9B /* GroupPurchaseState.swift in Sources */,
 				CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */,
 				CB2E9C322C5BC8B0007D0B9B /* GroupPurchaseViewModel.swift in Sources */,
+				CB2E9CCF2C8AE507007D0B9B /* AddrWebView.swift in Sources */,
 				CBC6B0E52C20864300D36671 /* ShopDetailView.swift in Sources */,
 				CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */,
 				CB2E9C872C64B73E007D0B9B /* GroupPurchaseItemCellView.swift in Sources */,

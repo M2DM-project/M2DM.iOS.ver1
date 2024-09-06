@@ -25,6 +25,7 @@ enum Page {
     case orderAddressView
     
     case myPageInfoView
+    case addrEditView
 }
 
 final class Coordinator: ObservableObject {
@@ -69,6 +70,8 @@ final class Coordinator: ObservableObject {
             
         case .myPageInfoView:
             MyPageInfoView()
+        case .addrEditView:
+            AddrEditView()
         }
     }
     
