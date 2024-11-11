@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyPageView: View {
     @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var myPageViewModel: MyPageViewModel
     @EnvironmentObject private var authenticationViewModel: AuthenticationViewModel
     
     var body: some View {
@@ -41,8 +42,11 @@ struct MyPageView: View {
                     VStack {
                         Text("주문내역")
                             .fontWeight(.bold)
-                        Text("0")
+                        Text("\(myPageViewModel.orderCount)")
                             .foregroundStyle(.textLightGray)
+                            .onTapGesture {
+                                coordinator.appendPath(.myPageOrderListView)
+                            }
                     }
                     .padding()
                     VStack {
@@ -91,6 +95,9 @@ struct MyPageView: View {
         .background(Color.background)
         .navigationTitle("마이페이지")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            myPageViewModel.loadMyOrder()
+        }
     }
 }
 

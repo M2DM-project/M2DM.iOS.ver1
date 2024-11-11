@@ -12,7 +12,6 @@ protocol GroupPurchaseProtocol {
     func loadAllGPList() async -> GroupPurchaseResponse
     func loadProductBySort(category: String, sortOption: String) async -> GroupPurchaseResponse
     func loadSearchGPProduct(searchText: String) async -> GroupPurchaseResponse
-//    func loadOneProduct(id: Int) async -> GroupPurchaseOneResponse
 }
 
 final class GroupPurchaseClass {
@@ -108,32 +107,4 @@ extension GroupPurchaseClass: GroupPurchaseProtocol {
             return GroupPurchaseResponse(statusCode: 400, message: "client error", content: [])
         }
     }
-    
-//    func loadOneProduct(id: Int) async -> GroupPurchaseOneResponse {
-//        let url = "\(Constant.BASE_URL)/gp/\(id)"
-//        
-//        #if DEBUG
-//        print("\(url)")
-//        #endif
-//        let request = AF.request(url,
-//                                 method: .get,
-//                                 parameters: nil,
-//                                 encoding: JSONEncoding.default)
-//        let dataTask = request.serializingDecodable(GroupPurchaseOneResponse.self)
-//        
-//        switch await dataTask.result {
-//            
-//        case .success(let value):
-//            guard let _ = await dataTask.response.response else {return GroupPurchaseOneResponse(statusCode: 400, message: "error", content: GroupPurchase(id: 0, name: "error", price: 0, content: "error", state: .FAIL, imgUrl: "error", maxQty: 0, nowQty: 0, goalQty: 0, start: "error", end: "error", category: Category(id: 0, cateCode: "error", name: "error")))
-//            }
-//            return value
-//            
-//        case .failure(_):
-//            // TODO: 에러 처리
-//            #if DEBUG
-//            print("상품 하나 불러오기 실패")
-//            #endif
-//            return GroupPurchaseOneResponse(statusCode: 400, message: "error", content: GroupPurchase(id: 0, name: "error", price: 0, content: "error", state: .FAIL, imgUrl: "error", maxQty: 0, nowQty: 0, goalQty: 0, start: "error", end: "error", category: Category(id: 0, cateCode: "error", name: "error")))
-//        }
-//    }
 }

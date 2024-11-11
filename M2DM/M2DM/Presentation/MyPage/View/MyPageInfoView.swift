@@ -70,6 +70,7 @@ struct MyPageInfoView: View {
                     .onTapGesture {
                         // TODO: 회원탈퇴 얼럿 띄우기
                         authenticationViewModel.withdrawal()
+                        coordinator.pop(1)
                         coordinator.selectedTab = .shopping
                     }
                 Spacer()

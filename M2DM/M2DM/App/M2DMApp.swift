@@ -17,6 +17,7 @@ struct M2DMApp: App {
     @StateObject private var authenticationViewModel = AuthenticationViewModel()
     @StateObject private var cartViewModel = CartViewModel()
     @StateObject private var orderViewModel = OrderViewModel()
+    @StateObject private var myPageViewModel = MyPageViewModel()
     
     init() {
         //kakao sdk 초기화
@@ -43,6 +44,6 @@ struct M2DMApp: App {
         .environmentObject(authenticationViewModel)
         .environmentObject(cartViewModel)
         .environmentObject(orderViewModel)
-        
+        .environmentObject(myPageViewModel)
     }
 }

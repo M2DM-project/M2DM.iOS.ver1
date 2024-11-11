@@ -15,8 +15,6 @@ struct Cart: Decodable {
 }
 
 struct CartItem: Decodable, Identifiable {
-    let id: Int
-    let count: Int
-    let price: Int
+    let id, count, price: Int
     let product: Product
 }

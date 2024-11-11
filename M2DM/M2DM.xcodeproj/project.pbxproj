@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CB031B592C21553A00ED46C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB031B582C21553A00ED46C2 /* Assets.xcassets */; };
+		CB051B992CB8D3FC00A3B223 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051B982CB8D3FC00A3B223 /* Order.swift */; };
+		CB051B9D2CBA334500A3B223 /* MyPageProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051B9C2CBA334500A3B223 /* MyPageProductListView.swift */; };
+		CB051C022CD233BC00A3B223 /* MyPageOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C012CD233BC00A3B223 /* MyPageOrderListView.swift */; };
+		CB051C762CDB240500A3B223 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C752CDB240500A3B223 /* OrderCellView.swift */; };
+		CB051C782CDB770700A3B223 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C772CDB770700A3B223 /* OrderDetailView.swift */; };
 		CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA57D2C33EBD00056407F /* CartViewModel.swift */; };
 		CB1FA5812C33EC070056407F /* CartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5802C33EC070056407F /* CartProtocol.swift */; };
 		CB1FA5862C35613B0056407F /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5852C35613B0056407F /* CartResponse.swift */; };
@@ -36,6 +41,12 @@
 		CB2E9CC92C899D9A007D0B9B /* MyPageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */; };
 		CB2E9CCD2C8AE447007D0B9B /* AddrEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */; };
 		CB2E9CCF2C8AE507007D0B9B /* AddrWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CCE2C8AE507007D0B9B /* AddrWebView.swift */; };
+		CB2E9CD22C8AED64007D0B9B /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CD12C8AED64007D0B9B /* MyPageResponse.swift */; };
+		CB2E9CD42C8AED89007D0B9B /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CD32C8AED89007D0B9B /* MyInfo.swift */; };
+		CB2E9CD62C8AEDFF007D0B9B /* RoleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CD52C8AEDFF007D0B9B /* RoleEnum.swift */; };
+		CB2E9CD92C8AEE6D007D0B9B /* MyPageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CD82C8AEE6D007D0B9B /* MyPageProtocol.swift */; };
+		CB2E9CDC2C8AF01D007D0B9B /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CDB2C8AF01D007D0B9B /* MyPageViewModel.swift */; };
+		CB2E9CDE2C8AF9E9007D0B9B /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9CDD2C8AF9E9007D0B9B /* UserDefaultsClient.swift */; };
 		CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F1E2C00D09700724D0A /* M2DMApp.swift */; };
 		CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */; };
 		CB679F3D2C00DB6E00724D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB679F3C2C00DB6E00724D0A /* LoginView.swift */; };
@@ -82,6 +93,11 @@
 
 /* Begin PBXFileReference section */
 		CB031B582C21553A00ED46C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB051B982CB8D3FC00A3B223 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		CB051B9C2CBA334500A3B223 /* MyPageProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProductListView.swift; sourceTree = "<group>"; };
+		CB051C012CD233BC00A3B223 /* MyPageOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageOrderListView.swift; sourceTree = "<group>"; };
+		CB051C752CDB240500A3B223 /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
+		CB051C772CDB770700A3B223 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		CB1FA57D2C33EBD00056407F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		CB1FA5802C33EC070056407F /* CartProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProtocol.swift; sourceTree = "<group>"; };
 		CB1FA5852C35613B0056407F /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
@@ -110,6 +126,12 @@
 		CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoView.swift; sourceTree = "<group>"; };
 		CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddrEditView.swift; sourceTree = "<group>"; };
 		CB2E9CCE2C8AE507007D0B9B /* AddrWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddrWebView.swift; sourceTree = "<group>"; };
+		CB2E9CD12C8AED64007D0B9B /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		CB2E9CD32C8AED89007D0B9B /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
+		CB2E9CD52C8AEDFF007D0B9B /* RoleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleEnum.swift; sourceTree = "<group>"; };
+		CB2E9CD82C8AEE6D007D0B9B /* MyPageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProtocol.swift; sourceTree = "<group>"; };
+		CB2E9CDB2C8AF01D007D0B9B /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		CB2E9CDD2C8AF9E9007D0B9B /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
 		CB679F1B2C00D09700724D0A /* M2DM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2DM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB679F1E2C00D09700724D0A /* M2DMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMApp.swift; sourceTree = "<group>"; };
 		CB679F3A2C00DB3E00724D0A /* M2DMTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2DMTabView.swift; sourceTree = "<group>"; };
@@ -279,8 +301,36 @@
 				CB679F532C00EA9800724D0A /* MyPageView.swift */,
 				CB2E9CC82C899D9A007D0B9B /* MyPageInfoView.swift */,
 				CB2E9CCC2C8AE447007D0B9B /* AddrEditView.swift */,
+				CB051B9C2CBA334500A3B223 /* MyPageProductListView.swift */,
+				CB051C012CD233BC00A3B223 /* MyPageOrderListView.swift */,
+				CB051C752CDB240500A3B223 /* OrderCellView.swift */,
+				CB051C772CDB770700A3B223 /* OrderDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CB2E9CD02C8AED57007D0B9B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E9CD12C8AED64007D0B9B /* MyPageResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CB2E9CD72C8AEE63007D0B9B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E9CD82C8AEE6D007D0B9B /* MyPageProtocol.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CB2E9CDA2C8AF012007D0B9B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E9CDB2C8AF01D007D0B9B /* MyPageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CB679F122C00D09700724D0A = {
@@ -380,6 +430,9 @@
 		CB679F342C00D1DD00724D0A /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E9CDA2C8AF012007D0B9B /* ViewModel */,
+				CB2E9CD72C8AEE63007D0B9B /* DataManager */,
+				CB2E9CD02C8AED57007D0B9B /* Entity */,
 				CB2E9CC72C899D66007D0B9B /* View */,
 			);
 			path = MyPage;
@@ -443,6 +496,7 @@
 				CB679F6E2C00FF1700724D0A /* Constant.swift */,
 				CB7E6F2A2C038798003433BD /* Coordinator.swift */,
 				CBF0CC592C25679400970EC9 /* MyDateFormatter.swift */,
+				CB2E9CDD2C8AF9E9007D0B9B /* UserDefaultsClient.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -498,6 +552,7 @@
 				CB1FA5CF2C4A48E90056407F /* ShopTypeEnum.swift */,
 				CB2E9C882C64BE0C007D0B9B /* GroupPurchaseState.swift */,
 				CB2E9CAE2C86BE2B007D0B9B /* CardEnum.swift */,
+				CB2E9CD52C8AEDFF007D0B9B /* RoleEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -546,6 +601,8 @@
 				CBC6B0E82C208B7700D36671 /* Review.swift */,
 				CB1FA5872C367B970056407F /* Cart.swift */,
 				CB2E9C382C5BCB01007D0B9B /* GroupPurchase.swift */,
+				CB2E9CD32C8AED89007D0B9B /* MyInfo.swift */,
+				CB051B982CB8D3FC00A3B223 /* Order.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -690,6 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2E9CD92C8AEE6D007D0B9B /* MyPageProtocol.swift in Sources */,
 				CB679F5F2C00FA1100724D0A /* AuthenticationViewModel.swift in Sources */,
 				CB2E9C852C64B63A007D0B9B /* GroupPurchaseListView.swift in Sources */,
 				CBC6B0DF2C1DCBF900D36671 /* SearchResultView.swift in Sources */,
@@ -709,8 +767,10 @@
 				CB1FA5D02C4A48E90056407F /* ShopTypeEnum.swift in Sources */,
 				CBF0CC472C22C10500970EC9 /* ReviewCell.swift in Sources */,
 				CB2E9CAD2C86A9EF007D0B9B /* GrouppurchaseBottomSheet.swift in Sources */,
+				CB051C782CDB770700A3B223 /* OrderDetailView.swift in Sources */,
 				CB2E9C362C5BCAAA007D0B9B /* GroupPurchaseResponse.swift in Sources */,
 				CB679F6A2C00FB9500724D0A /* KakaoResponse.swift in Sources */,
+				CB051C762CDB240500A3B223 /* OrderCellView.swift in Sources */,
 				CB7E6F142C025FF9003433BD /* CategoryEnum.swift in Sources */,
 				CB2E9C342C5BCA31007D0B9B /* GroupPurchaseProtocol.swift in Sources */,
 				CB7E6F112C0250E6003433BD /* MenuView.swift in Sources */,
@@ -736,12 +796,17 @@
 				CB2E9CBE2C897174007D0B9B /* OrderResponse.swift in Sources */,
 				CBF0CC4E2C22E5D700970EC9 /* ReviewProtocol.swift in Sources */,
 				CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */,
+				CB2E9CDC2C8AF01D007D0B9B /* MyPageViewModel.swift in Sources */,
 				CB679F562C00EAA000724D0A /* SecondHandView.swift in Sources */,
 				CB2E9CC62C897988007D0B9B /* CartSuccessView.swift in Sources */,
+				CB2E9CD62C8AEDFF007D0B9B /* RoleEnum.swift in Sources */,
 				CB7E6F1C2C036B0F003433BD /* SortOptionEnum.swift in Sources */,
 				CB2E9CC22C8971C3007D0B9B /* OrderProtocol.swift in Sources */,
 				CB679F4C2C00E94800724D0A /* Bundle+Extension.swift in Sources */,
+				CB051C022CD233BC00A3B223 /* MyPageOrderListView.swift in Sources */,
+				CB051B9D2CBA334500A3B223 /* MyPageProductListView.swift in Sources */,
 				CBC6B0E92C208B7700D36671 /* Review.swift in Sources */,
+				CB2E9CD42C8AED89007D0B9B /* MyInfo.swift in Sources */,
 				CB1FA5882C367B970056407F /* Cart.swift in Sources */,
 				CB2E9CCD2C8AE447007D0B9B /* AddrEditView.swift in Sources */,
 				CB7E6F0F2C024651003433BD /* AuthenticationError.swift in Sources */,
@@ -751,7 +816,10 @@
 				CB2E9C892C64BE0C007D0B9B /* GroupPurchaseState.swift in Sources */,
 				CB679F6D2C00FC5800724D0A /* AuthenticationProtocol.swift in Sources */,
 				CB2E9C322C5BC8B0007D0B9B /* GroupPurchaseViewModel.swift in Sources */,
+				CB2E9CD22C8AED64007D0B9B /* MyPageResponse.swift in Sources */,
+				CB2E9CDE2C8AF9E9007D0B9B /* UserDefaultsClient.swift in Sources */,
 				CB2E9CCF2C8AE507007D0B9B /* AddrWebView.swift in Sources */,
+				CB051B992CB8D3FC00A3B223 /* Order.swift in Sources */,
 				CBC6B0E52C20864300D36671 /* ShopDetailView.swift in Sources */,
 				CBF0CC582C25660400970EC9 /* ReviewResponse.swift in Sources */,
 				CB2E9C872C64B73E007D0B9B /* GroupPurchaseItemCellView.swift in Sources */,

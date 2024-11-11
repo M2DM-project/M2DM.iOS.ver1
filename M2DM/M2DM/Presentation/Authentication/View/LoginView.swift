@@ -10,11 +10,15 @@ import KakaoSDKUser
 
 struct LoginView: View {
     @EnvironmentObject private var authenticationViewModel: AuthenticationViewModel
+    @EnvironmentObject private var mypageViewModel: MyPageViewModel
     @State private var isLoggined: Bool = false
     
     var body: some View {
         if authenticationViewModel.isLoggined {
             M2DMTabView()
+                .onAppear {
+                    mypageViewModel.loadUserInfo()
+                }
         } else {
             VStack {
                 Text("간편 로그인")
