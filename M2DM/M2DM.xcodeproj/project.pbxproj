@@ -13,6 +13,7 @@
 		CB051C022CD233BC00A3B223 /* MyPageOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C012CD233BC00A3B223 /* MyPageOrderListView.swift */; };
 		CB051C762CDB240500A3B223 /* OrderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C752CDB240500A3B223 /* OrderCellView.swift */; };
 		CB051C782CDB770700A3B223 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051C772CDB770700A3B223 /* OrderDetailView.swift */; };
+		CB051CA52CE2066F00A3B223 /* OrderThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB051CA42CE2066F00A3B223 /* OrderThumbnail.swift */; };
 		CB1FA57E2C33EBD00056407F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA57D2C33EBD00056407F /* CartViewModel.swift */; };
 		CB1FA5812C33EC070056407F /* CartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5802C33EC070056407F /* CartProtocol.swift */; };
 		CB1FA5862C35613B0056407F /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FA5852C35613B0056407F /* CartResponse.swift */; };
@@ -98,6 +99,7 @@
 		CB051C012CD233BC00A3B223 /* MyPageOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageOrderListView.swift; sourceTree = "<group>"; };
 		CB051C752CDB240500A3B223 /* OrderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellView.swift; sourceTree = "<group>"; };
 		CB051C772CDB770700A3B223 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		CB051CA42CE2066F00A3B223 /* OrderThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderThumbnail.swift; sourceTree = "<group>"; };
 		CB1FA57D2C33EBD00056407F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		CB1FA5802C33EC070056407F /* CartProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProtocol.swift; sourceTree = "<group>"; };
 		CB1FA5852C35613B0056407F /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				CB2E9C382C5BCB01007D0B9B /* GroupPurchase.swift */,
 				CB2E9CD32C8AED89007D0B9B /* MyInfo.swift */,
 				CB051B982CB8D3FC00A3B223 /* Order.swift */,
+				CB051CA42CE2066F00A3B223 /* OrderThumbnail.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				CB2E9CB92C896A10007D0B9B /* ShopBottomSheet.swift in Sources */,
 				CB679F3B2C00DB3E00724D0A /* M2DMTabView.swift in Sources */,
 				CB7E6F292C0382CF003433BD /* ItemCellView.swift in Sources */,
+				CB051CA52CE2066F00A3B223 /* OrderThumbnail.swift in Sources */,
 				CB679F1F2C00D09700724D0A /* M2DMApp.swift in Sources */,
 				CBF0CC5A2C25679400970EC9 /* MyDateFormatter.swift in Sources */,
 				CBF0CC4B2C22E5B800970EC9 /* ReviewViewModel.swift in Sources */,

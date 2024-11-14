@@ -14,7 +14,7 @@ struct MyPageOrderListView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(myPageViewModel.orders) { item in
+                ForEach(myPageViewModel.orderItems) { item in
                     OrderCellView(item: item)
                         .onTapGesture {
                             //TODO: 주문 상세 view
@@ -22,6 +22,7 @@ struct MyPageOrderListView: View {
                         }
                 }
             }
+            .listStyle(.inset)
             .background(Color.background)
             .scrollContentBackground(.hidden)
         }

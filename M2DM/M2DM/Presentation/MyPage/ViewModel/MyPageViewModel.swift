@@ -13,7 +13,7 @@ final class MyPageViewModel: ObservableObject {
     
     @Published private(set) var orderCount = 0
     @Published private(set) var orders: [Order] = []
-//    @Published private(set) var orders
+    @Published private(set) var orderItems: [OrderThumbnail] = []
     
     var dataManager: MyPageProtocol
     
@@ -31,9 +31,18 @@ final class MyPageViewModel: ObservableObject {
         Task {
             orders = await dataManager.laodOrder().content
             orderCount = orders.count
+            orderItems = []
             
+            // product로 하나 주문했을 때 or catItem으로 여러개 주문했을 때
             for item in orders {
-                
+                if let item = item.product {
+                    let orderItem = OrderThumbnail(id: item.id, name: item.name, price: item.price, imgUrl: item.imgUrl, qty: 1)
+                    orderItems.append(orderItem)
+                } else if item.cartItems.count > 0 {
+                    let cartItem = item.cartItems[0].product
+                    let orderItem = OrderThumbnail(id: cartItem.id, name: cartItem.name, price: cartItem.price, imgUrl: cartItem.imgUrl, qty: item.cartItems.count)
+                    orderItems.append(orderItem)
+                }
             }
         }
     }
